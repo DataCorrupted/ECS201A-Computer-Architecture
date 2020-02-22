@@ -22,7 +22,9 @@
     What is the definition of a basic block? Why is there a desire to create larger ones? Give one example of a way to create a bigger basic block.
 }{
     A straight-line code sequence with no branches in except to the entry and no branches out except at the exit.(Pg. 149)
+
     So compilers can optimize more.
+
     Loop unrolling
 }
 
@@ -32,5 +34,53 @@
     What's an example of a commonly occurring indirect branch, and a hardware structure used to deal with it?
 }{
     Subroutines / Functions
+
     Return address stack
+}
+
+\problem{
+    f13m2q14
+    f14m2p1
+    f15m2q6
+    f16m2q3
+    w20q4q5
+}{  
+    Compilers have trouble optimizing code that involves reads and writes to memory, why?
+}{
+    Hazard through memory system.
+}
+
+\problem{
+    w20q4q6
+}{
+    What are two challenges to using loop unrolling
+}{
+    Don't know how much to unroll  
+
+    Register pressure
+}
+
+\problem{
+    w20q4q7
+}{
+    What is a Tournament predictor? Describe how it works and why it is used.
+}{
+    \todo{What?}
+}
+
+\problem{
+    f12m2q13
+    f16f0p1
+    f15f1p1
+    w20q4q8
+}{
+    What is the definition of a precise interrupt?
+    Why it is a challenge in Out of order machines?
+    The two main techniques used today to provide a precise interrupt?
+}{
+    When an interrupt happens, every instruction before it has finished and none after can complete.
+    
+    \todo{What?}
+
+    \todo{What?}
 }
