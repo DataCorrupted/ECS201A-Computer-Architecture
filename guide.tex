@@ -1,0 +1,98 @@
+\section*{Contribution \& usage guide}
+This is \name. 
+This preamble section should serve as a README section to help you contribute to this project and prepare for exams.
+Ideally, this should be a repo for all problems in ECS201A: Computer Architecture.
+Should you have anything to discuss or add, send us an email or issue.
+
+\subsubsection*{Contribution}
+
+\subsubsection*{How to add a problem}
+In this file, all questions are recorded and anwered.
+A question is composed of 3 parts: \textit{Appearance}, \textit{Body}, and \textit{Ans}.
+
+\textit{Appearance} includes the quarter, exam id and question id of this question so we can refer to where exactly it is.
+The first two denotes the season and year, for example, \texttt{f15} denotes fall 15.
+The middle two denotes the exam it appeared on, \texttt{f0} refers to final, midterms and quizzes use letter \texttt{m} and \texttt{q}, attached with the number showing which midter/quiz it is.
+The final component starts with \texttt{q} and a question id after it, if there is no label on question id, use page number starting with \texttt{p}
+For example, \texttt{f17m1q4} means the 4th question in midterm 1 in fall 2017.
+Each \textit{appearance} should take up a line to avoid merge conflict. 
+It is suggested that you put \textit{appearance} in the order of time.
+
+\texttt{Body} refers to the question itself. 
+Different exams may have altered questions, please try to put a superset of all similar ones.
+If the body is too long or involves code/drawing, you may skip it by put command \lstinline{\nop} here.
+Then it would be crucial that you put correct \textit{Appearance} so we can find it.
+
+Please provide most accurate \texttt{Ans} possible.
+
+Please use command \texttt{problem} to add a problem.
+For code hygiene, each sentence should only take up one line to avoid merge conflict.
+Please use the following format:
+\begin{lstlisting}
+\problem{
+    <Appearance1>
+    <Appearance2>
+    <Appearance3>
+} {
+    <Body>
+} {
+    <Ans>
+}
+\end{lstlisting}
+
+If you put 
+\begin{lstlisting}
+\problem{
+    f12m1q1
+    w12m1q1
+    f12f0p1
+    w12f0p1
+    f14m1q3
+    f13m1q4
+    f14f0p1
+    f15f0p1
+}{
+    As minimum feature sizes decrease, 
+    a) what happens to power density?
+    b) what happens to wire resistance, and why?
+}{
+    Density goes up and resistance goes down.
+}
+\end{lstlisting}
+you get:
+
+\problem{
+    f12m1q1
+    w12m1q1
+    f12f0p1
+    w12f0p1
+    f14m1q3
+    f13m1q4
+    f14f0p1
+    f15f0p1
+}{
+    As minimum feature sizes decrease, a) what happens to power density? b) what happens to wire resistance, and why?
+}{
+    Density goes up and resistance goes down.
+}
+
+\subsubsection*{Where to put a problem}
+
+We want to arrange all the problems in the order of our classes.
+So we set up different files, including \texttt{q1.tex}, \texttt{q2.tex}, \texttt{m1.tex}, etc.
+All questions before quiz 1(or all questions related to the ones in \texttt{q1}) should be put in \texttt{q1}.
+Similarly, put everything between quiz4 and midterm2 in \texttt{m2.tex}.
+
+\subsubsection*{Pro tip on how to find all \textit{Appearance}}
+
+Farrens (unwisely) put all his pdf under one folder that is publically acciable, making all files easy to craw.
+Use google search to target on his website using \texttt{site} keyword, search on important key word and you are good to go.
+
+For example, to get all \textit{Appearance} on the problem we mentioned above, google search \texttt{minimum feature size decreases site:http://american.cs.ucdavis.edu/academic/ecs201a/postscript/}
+
+
+\subsubsection*{Usage}
+
+Type in \lstinline{make} to compile to a pdf file. 
+You can turn \texttt{showAns} in \texttt{main.tex:36} to \texttt{false} to hide answers.
+Should you have any questions, feel free to contact us.

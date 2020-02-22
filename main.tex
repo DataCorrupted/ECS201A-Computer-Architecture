@@ -1,0 +1,77 @@
+\documentclass[letterpaper,11pt]{article}
+\usepackage{geometry}
+\geometry{
+	margin = 1in,
+	top = 1in,
+}
+\setlength{\parskip}{0.35em}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{listings}
+\lstset{
+	numbers=left, 
+	numberstyle=\small, 
+	numbersep=8pt, 
+	frame = single, 
+	framexleftmargin=15pt
+}
+
+
+\title{\name}
+
+\pagestyle{plain}
+\pagenumbering{arabic}
+
+\author{ \\ Computer Science @ UC Davis}
+
+\author{
+  Yuyang(Peter) Rong\\
+  PtrRong@ucdavis.edu
+  \and
+  Chao Wu \\
+  ChaWu@ucdavis.edu
+}
+
+\date{}
+
+\def\showAns{true}
+
+\def\true{true}
+\def\false{false}
+
+\newcommand{\name}{Cheatsheet for 2\texttt{O}1A}
+\newcommand{\nop}{This problem body is too long to put here, please refer to \textit{Appearance} to find the original one}
+\newcommand{\todo}[1]{\textcolor{red}{#1}}
+\newcommand{\problem}[3]{
+% Tests it appeared on
+	\texttt{#1} 
+\par 
+% Question
+	\textbf{#2} 
+\vspace{0.5em} \par 
+% Show answer if set to true.
+
+	\ifx\showAns\true
+		#3 
+		\\ \par
+	\else
+		\vspace{6em}
+	\fi
+
+}
+
+\begin{document}
+
+\maketitle
+
+\input{guide.tex}\newpage
+
+\input{q1.tex} \newpage
+\input{q2.tex} \newpage
+\input{m1.tex} \newpage
+\input{q3.tex} \newpage
+\input{q4.tex} \newpage
+\input{m2.tex} \newpage
+
+
+\end{document}
