@@ -4,7 +4,7 @@ This preamble section should serve as a README section to help you contribute to
 Ideally, this should be a repo for all problems in ECS201A: Computer Architecture.
 Should you have anything to discuss or add, send us an email or issue.
 
-\subsubsection*{Contribution}
+\subsection*{Contribution}
 
 \subsubsection*{How to add a problem}
 In this file, all questions are recorded and anwered.
@@ -14,7 +14,8 @@ A question is composed of 3 parts: \textit{Appearance}, \textit{Body}, and \text
 The first two denotes the season and year, for example, \texttt{f15} denotes fall 15.
 The middle two denotes the exam it appeared on, \texttt{f0} refers to final, midterms and quizzes use letter \texttt{m} and \texttt{q}, attached with the number showing which midter/quiz it is.
 The final component starts with \texttt{q} and a question id after it, if there is no label on question id, use page number starting with \texttt{p}
-For example, \texttt{f17m1q4} means the 4th question in midterm 1 in fall 2017.
+For example, \texttt{f17m1q4} means the 4th question in midterm 1 in fall 2017. 
+If there is only one midterm in that quater, use \texttt{m0}
 Each \textit{appearance} should take up a line to avoid merge conflict. 
 It is suggested that you put \textit{appearance} in the order of time.
 
@@ -85,14 +86,64 @@ Similarly, put everything between quiz4 and midterm2 in \texttt{m2.tex}.
 
 \subsubsection*{Pro tip on how to find all \textit{Appearance}}
 
-Farrens (unwisely) put all his pdf under one folder that is publically acciable, making all files easy to craw.
-Use google search to target on his website using \texttt{site} keyword, search on important key word and you are good to go.
+Farrens (unwisely) put all his pdf under one folder that is publically available, making all files easy to craw.
+Use google search to target on his website using \texttt{site} keyword, search on important keyword and you are good to go.
 
 For example, to get all \textit{Appearance} on the problem we mentioned above, google search \texttt{minimum feature size decreases site:http://american.cs.ucdavis.edu/academic/ecs201a/postscript/}
 
 
-\subsubsection*{Usage}
+\subsection*{Usage}
 
 Type in \lstinline{make} to compile to a pdf file. 
 You can turn \texttt{showAns} in \texttt{main.tex:36} to \texttt{false} to hide answers.
 Should you have any questions, feel free to contact us.
+
+\subsection*{Selection pool}
+
+As we hope we can go over and filter all the exams we have in hand, it is not possible with too few of us.
+However, probability tells us as long as we go over enough number we would approach real mean.
+That's the reason we set up this selection pool, i.e. we only look for questions asked in this pool. 
+We would record if the same question appeared outside the pool, just we won't be actively looking for new problems outside the pool.
+
+The pool consists of the following:
+
+\begin{minipage}[t]{0.24\textwidth}
+    \subsubsection*{Winter 20}
+    \begin{itemize}
+        \item \texttt{w20q1}
+        \item \texttt{w20q2}
+        \item \texttt{w20m1}
+        \item \texttt{w20q3}
+        \item \texttt{w20q4}
+        \item \texttt{w20q5}
+        \item \texttt{w20m2}
+    \end{itemize}
+\end{minipage}
+\begin{minipage}[t]{0.24\textwidth}
+    \subsubsection*{Midterm1s}
+    \begin{itemize}
+        \item \texttt{f12m1}
+        \item \texttt{w12m1}
+        \item \texttt{f13m1}
+        \item \texttt{f14m1}
+        \item \texttt{w19m1}
+    \end{itemize}    
+\end{minipage}
+\begin{minipage}[t]{0.24\textwidth}
+    \subsubsection*{Midterm2s}
+    \begin{itemize}
+        \item \texttt{w10m2}
+        \item \texttt{w12m2}
+        \item \texttt{w14m2}
+        \item \texttt{w15m2}
+        \item \texttt{w16m2}
+    \end{itemize}    
+\end{minipage}
+\begin{minipage}[t]{0.24\textwidth}
+    \subsubsection*{Finals}
+    \begin{itemize}
+        \item \texttt{f13f0}
+        \item \texttt{f15f0}
+        \item \texttt{f16f0}
+    \end{itemize}
+\end{minipage}
