@@ -1,12 +1,17 @@
 \documentclass[letterpaper,11pt]{article}
+
+% Page setup.
 \usepackage{geometry}
 \geometry{
 	margin = 1in,
 	top = 1in,
 }
 \setlength{\parskip}{0.35em}
-\usepackage{graphicx}
+
+% Text color
 \usepackage{xcolor}
+
+% Code listing
 \usepackage{listings}
 \lstset{
 	numbers=left, 
@@ -16,6 +21,8 @@
 	framexleftmargin=15pt
 }
 
+% Allow bold in texttt
+\usepackage{bold-extra}
 
 \title{\name}
 
@@ -41,8 +48,10 @@
 
 \newcommand{\name}{Cheatsheet for 2\texttt{O}1A}
 \newcommand{\nop}{This problem body is too long to put here, please refer to \textit{Appearance} to find the original one}
-\newcommand{\todo}[1]{\textcolor{red}{#1}}
-\newcommand{\problem}[3]{
+\newcommand{\warn}[1]{\textcolor{red}{#1}}
+\newcommand{\todo}{\textbf{\textcolor{red}{TODO}}}
+\newcommand{\xxxxxx}{\textbf{xxxxxx}}
+\newcommand{\problem}[3][\xxxxxx]{
 % Tests it appeared on
 	\hfill\texttt{#1} 
 \par 
