@@ -24,6 +24,9 @@
 % Allow bold in texttt
 \usepackage{bold-extra}
 
+% Allow auto spacing
+\usepackage{xspace}
+
 \title{\name}
 
 \pagestyle{plain}
@@ -46,7 +49,6 @@
 \def\true{true}
 \def\false{false}
 
-\newcommand{\name}{Cheatsheet for 2\texttt{O}1A}
 \newcommand{\nop}{This problem body is too long to put here, please refer to \textit{Appearance} to find the original one}
 \newcommand{\warn}[1]{\textcolor{red}{#1}}
 \newcommand{\todo}{\textbf{\textcolor{red}{TODO}}}
@@ -68,6 +70,8 @@
 	\fi
 
 }
+
+\input{term.tex}
 
 \begin{document}
 

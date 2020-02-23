@@ -1,1 +1,78 @@
 \section*{Quiz 3 (Feb 7, 2020)}
+
+\problem{
+    w20q3q1
+}{
+    What are the 3 pipeline hazards? Which one can be solved by providing more resources?
+}{
+    Structural / Data / Control hazards
+
+    Structural hazard can be solved.
+}
+
+\problem{
+    w20q3q2
+}{
+    What are the 3 types of data hazards? Which one can be solved by using forwarding?
+}{
+    RAW / WAR / WAW
+
+    RAW can be solved by forwarding.
+}
+
+\problem{
+    w20q3q3
+}{
+    When dealing with control hazards, it is not enough to predict the branch direction, what else must we know?
+}{
+    Branch target address
+}
+
+\problem{
+    w20q3q4
+}{
+    Which is on average more effective, dynamic or static branch prediction?
+}{
+    Dynamic
+}
+
+\problem{
+    w20q3q5
+}{
+    \nop
+}{
+    a) 48
+
+    b) No, Memory takes 2x time than the other. 
+    Split M into 2 equally stages, each taking 24 time-units.
+}
+
+\problem{
+    w20q3q6
+}{
+    \nop
+}{
+    \todo
+}
+
+\problem{
+    w20q3q7
+}{
+    A simple dynamic branch prediction scheme is to use a table of 2-bit predictors, accessed using bits from the PC. 
+    It would seem that the bigger the table, the better the predictor would work, is that true? 
+    If not, what is the limit on how many entries the table can have and still give good perfor­mance?
+}{
+    False, 4096 bits.
+}
+
+\problem{
+    w20q3q8
+}{
+    \nop
+}{
+    \begin{enumerate}
+        \item Interrupt on \texttt{i+1} and squash the next two.
+        \item Squash \texttt{i+1} to \texttt{i+5}
+        \item 5, WB stage cannot go wrong.
+    \end{enumerate}
+}
