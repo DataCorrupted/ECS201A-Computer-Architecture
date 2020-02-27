@@ -18,10 +18,13 @@
 
 \problem{
     f14m2q4
+    f15m2q5
 }{
     What does ROB stand for, and why is it used in modern advanced pipelines? 
 }{
-    Reorder Buffer. It supports Precise Interrupt.
+    Reorder Buffer. 
+
+    It can dynamically execute code while maintaining a precise interrupt.
 }
 
 \problem{
@@ -33,15 +36,20 @@
 }
 
 \problem{
-    f16m2q2
     f14m2q1
+    f15m2q3
+    f16m2q2
+    w12m2q10
 }{
     What is the primary difference between Tomasulo’s algorithm and Scoreboarding?
 }{
-     \todo
+    Tomasulo’s: distributed; scoreboarding: centralized.
+
+    \warn{Common data bus(CDB)}
 }
 
 \problem{
+    f15m2q6
     f16m2q3
 }{
     Compilers have trouble optimizing code that involves reads and writes to memory. Why? (The answer has nothing to do with how slow memory is - that is a different problem altogether).
@@ -50,11 +58,18 @@
 }
 
 \problem{
+    f15m2q4
     f16m2q4
 }{
-    Why is there a desire to create larger basic blocks? Give one example of a way to create a bigger basic block.
+    What is the definition of a basic block? 
+    Why is there a desire to create larger basic blocks? 
+    Give one example of a way to create a bigger basic block.
 }{
-     \todo
+    A straight-line code sequence with no branches in except to the entry and no branches out except at the exit.\pg{149}
+
+    So compilers can optimize more.
+
+    Loop unrolling
 }
 
 \problem{
@@ -66,9 +81,12 @@
 }
 
 \problem{
+    f15m2q7
     f16m2q6
 }{
-    Intel uses a Tournament predictor in some of their processors. Describe what it is, and why it is used. Your description can (and probably should) include sketches and drawings.
+    Intel uses a Tournament predictor in some of their processors. 
+    Describe what it is, and why it is used. 
+    Your description can (and probably should) include sketches and drawings.
 }{
      \todo
 }
@@ -82,9 +100,12 @@
 }
 
 \problem{
+    f15m2q8
     f16m2q8
 }{
-    The book states that slow and wide architectures can be more power efficient than fast and nar- row architectures. Explain why. Also, explain the underlying assumption that is being made, and why it is that we are still making narrow fast machines.
+    The book states that slow and wide architectures can be more power efficient than fast and narrow architectures. 
+    Explain why. 
+    Also, explain the underlying assumption that is being made, and why it is that we are still making narrow fast machines.
 }{
      \todo
 }
@@ -98,26 +119,45 @@
 }
 
 \problem{
+    f15m2q11
     f16m2q10
 }{
     Briefly outline how a Vector machine works, and what type of parallelism it is exploiting.
+}{
+    \todo
+
+    Data level parallelism.
+}
+
+\problem{
+    f15m2q12
+    f16m2q11
+}{
+    What is the primary difference between superscalar and VLIW processors? 
+    Give one advantage and one disadvantage to using each approach. 
+    (These have to be different - in other words, if the advantage of superscalar is X, then you can’t say a disadvantage of VLIW is that it can’t do X.)
 }{
      \todo
 }
 
 \problem{
-    f16m2q11
+    f15m2q9
+    f16m2q12
 }{
-    What is the primary difference between superscalar and VLIW processors? Give one advantage and one disadvantage to using each approach. (These have to be different - in other words, if the advantage of superscalar is X, then you can’t say a disadvantage of VLIW is that it can’t do X.)
+    You have been writing C programs for a simple, non-pipelined machine. 
+    You have recently received a promotion, and now your job is to write C programs for a heavily pipelined, high performance processor. 
+    These new programs must execute as fast as possible (the emphasis is on response time, not throughput). 
+    Give at least 2 examples of things you should do differently now, and be sure to explain in detail why 
+    (what is the problem you are overcoming?)
 }{
-     \todo
+    \todo
 }
 
 \problem{
     f14m2q2
 }{
-    Which data hazard occurs when instructions are allowed to complete out of order? Which one occurs
-when instructions are allowed to issue out of order?
+    Which data hazard occurs when instructions are allowed to complete out of order? 
+    Which one occurs when instructions are allowed to issue out of order?
 }{
     \todo
 }
@@ -125,8 +165,8 @@ when instructions are allowed to issue out of order?
 \problem{
     f14m2q5
 }{
-    Speculation is a very useful technique for improving performance. However, it is not being used as
-extensively as it once was - why not?
+    Speculation is a very useful technique for improving performance. 
+    However, it is not being used as extensively as it once was - why not?
 }{
     \todo
 }
