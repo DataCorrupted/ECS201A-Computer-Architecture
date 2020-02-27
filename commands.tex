@@ -1,0 +1,22 @@
+\newcommand{\nop}{This problem body is too long to put here, please refer to \textit{Appearance} to find the original one}
+\newcommand{\warn}[1]{\textcolor{yellow}{#1}}
+\newcommand{\pg}[1]{(\textit{p.g. #1})}
+\newcommand{\todo}{\textbf{\textcolor{red}{TODO}}}
+\newcommand{\xxxxxx}{\textbf{xxxxxx}\xspace}
+\newcommand{\problem}[3]{
+% Tests it appeared on
+	\hfill\texttt{#1} 
+\par 
+% Question
+	\textbf{#2} 
+\vspace{0.35em} \par 
+% Show answer if set to true.
+
+	\ifx\showAns\true
+		#3 
+		\vspace{0.35em}
+	\else
+		\vspace{6em}
+	\fi
+
+}
