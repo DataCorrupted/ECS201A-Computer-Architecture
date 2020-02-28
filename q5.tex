@@ -56,14 +56,16 @@
 }
 
 \problem{
+    f16m2q5
+    f16f0p4
     w20q5q6
-    \xxxxxx
 }{
     Processors have been built that are able to issue 8 instructions at a time. 
     However, these pro­cessors are no longer being built - why not? 
     Why would you choose a 3-issue machine over an 8-issue machine?
 }{
-    \todo
+    Speculation requires a lot of power, and we don't get 8-issue very often because we don't always find that much parallelism, so it is not power efficient.
+    I am wasting all of my energy supporting my 8-issue when I only get 3 or 4.
 }
 
 \problem{
@@ -134,3 +136,4 @@
         B B C C C \\
         A A B B B \\
 }
+

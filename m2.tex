@@ -73,14 +73,6 @@
 }
 
 \problem{
-    f16m2q5
-}{
-    Processors have been built that were able to issue 8 instructions at a time using a fast clock. However, these processors are no longer being built - why not? Why would you choose a 3-issue machine over an 8-issue machine, if the clock rates were the same?
-}{
-     \todo
-}
-
-\problem{
     f15m2q7
     f16m2q6
 }{
@@ -100,14 +92,20 @@
 }
 
 \problem{
+    f12m2q10
+    f14m2p2
     f15m2q8
     f16m2q8
 }{
-    The book states that slow and wide architectures can be more power efficient than fast and narrow architectures. 
+    The book states that slow and wide architectures can be more power-efficient than fast and narrow architectures. 
     Explain why. 
     Also, explain the underlying assumption that is being made, and why it is that we are still making narrow fast machines.
 }{
-     \todo
+    Slow and wide can lower both clock rate and voltage.
+    Lowering $V$ and $f$ means the power goes down since $P = C \cdot f \cdot V^2$.
+
+    If there is enough data-level parallelism, then slow and wide can provide the same throughput as fast and narrow while using less power. 
+    There is not always enough DLP though.
 }
 
 \problem{
@@ -126,31 +124,53 @@
 }{
     \todo
 
-    Data level parallelism.
+    Data level parallelism(SIMD)
 }
 
 \problem{
+    f04m1q16
+    w10m1q10
+    w12f0p1
+    f13f0p1
+    f14m2p2
     f15m2q12
+    f15f0p2
+    f15f1p1
     f16m2q11
+    f16f0p1
 }{
     What is the primary difference between superscalar and VLIW processors? 
-    Give one advantage and one disadvantage to using each approach. 
+
+    Give one advantage and one disadvantage of using each approach. / Compare and contrast VLIW and superscalar with two advantage and one disadvantage.
     (These have to be different - in other words, if the advantage of superscalar is X, then you can’t say a disadvantage of VLIW is that it can’t do X.)
 }{
-     \todo
+    Superscalar uses hardware to do dynamic scheduling, while VLIW uses software to do static scheduling.
+
+    Pro of superscalar: No recompilation on hardware changes. \\
+    Con of superscalar: Hardware complexity.
+
+    Pro of VLIW: Power efficient. \\
+    Con of VLIW: Memory ambiguity.
 }
 
 \problem{
+    f14m2p2
+    f14f0p1
     f15m2q9
+    f15f1p1
     f16m2q12
+    f16f0p1
 }{
     You have been writing C programs for a simple, non-pipelined machine. 
-    You have recently received a promotion, and now your job is to write C programs for a heavily pipelined, high performance processor. 
+    You have recently received a promotion, and now your job is to write C programs for a heavily pipelined, high-performance processor. 
     These new programs must execute as fast as possible (the emphasis is on response time, not throughput). 
     Give at least 2 examples of things you should do differently now, and be sure to explain in detail why 
     (what is the problem you are overcoming?)
 }{
-    \todo
+    \begin{enumerate}
+        \item Use fewer pointers, as they make compilers hard to do optimization.
+        \item Write incline code so I can make bigger basic blocks.
+    \end{enumerate}
 }
 
 \problem{
