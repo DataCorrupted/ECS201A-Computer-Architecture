@@ -1,35 +1,6 @@
 \section*{Week 8 (2/24 - 3/1, Midterm 2)}
 
 \problem{
-    f14m2q4
-    f15m2q5
-}{
-    What does ROB stand for, and why is it used in modern advanced pipelines? 
-}{
-    Reorder Buffer. 
-
-    It can dynamically execute code while maintaining a precise interrupt.
-}
-
-\problem{
-    f12m2q10
-    f14m2p2
-    f15m2q8
-    f16m2q8
-    w19m2q9
-}{
-    The book states that slow and wide architectures can be more power-efficient than fast and narrow architectures. 
-    Explain why. 
-    Also, explain the underlying assumption that is being made, and why it is that we are still making narrow fast machines.
-}{
-    Slow and wide can lower both clock rate and voltage.
-    Lowering $V$ and $f$ means the power goes down since $P = C \cdot f \cdot V^2$.
-
-    If there is enough data-level parallelism, then slow and wide can provide the same throughput as fast and narrow while using less power. 
-    There is not always enough DLP though.
-}
-
-\problem{
     f15m2q11
     f16m2q10
     w19m2q2
@@ -40,71 +11,6 @@
     Single instruction operated on these VRs, such that the single instruction do multiple operations on elements of the VRs. 
 
     Data level parallelism.
-}
-
-\problem{
-    f14m2p2
-    f14f0p1
-    f15m2q9
-    f15f1p1
-    f16m2q12
-    f16f0p1
-    w19m2q13
-}{
-    You have been writing C programs for a simple, non-pipelined machine. 
-    You have recently received a promotion, and now your job is to write C programs for a heavily pipelined, high-performance processor. 
-    These new programs must execute as fast as possible (the emphasis is on response time, not throughput). 
-    Give at least 2 examples of things you should do differently now, and be sure to explain in detail why 
-    (what is the problem you are overcoming?)
-}{
-    \begin{enumerate}
-        \item avoid using pointers: pointers screw up register allocation when compiling 
-        \item avoid using recursions: return address stack can be overflowed 
-        \item inline functions: to make larger basic blocks
-    \end{enumerate}
-
-    Avoiding using pointers make the biggest difference in performance, as in general applications pointers are more widely used.
-}
-
-\problem{
-    f16m2q13
-    w20q5q8
-}{
-    (Dependencies recognization \& register substitution) 
-}{
-    refer to the exam
-}
-
-\problem{
-    f16m2q14
-}{
-    (Dependencies recognization \& NOPS insertion) 
-}{
-    refer to the exam
-}
-
-\problem{
-    f14m2q5
-}{
-    Speculation is a very useful technique for improving performance. 
-    However, it is not being used as extensively as it once was - why not?
-}{
-    \warn{
-        \pg{201}
-        Incorrect speculation does not improve performance; 
-        in fact, it typically harms performance dramatically lowers energy efficiency.
-    }
-
-    OR
-    
-    \warn{
-        \pg{210}
-        \begin{itemize}
-            \item Speculation is not free. It takes time and energy, and the recovery of incorrect speculation further reduces performance. 
-            \item In addition, to support the higher instruction execution rate needed to benefit from speculation, the processor must have additional resources, which take silicon area and power. 
-            \item Finally, if speculation causes an exceptional event to occur, such as a cache or translation lookaside buffer (TLB) miss, the potential for significant performance loss increases, if that event would not have occurred without speculation.
-        \end{itemize}
-    }
 }
 
 \problem{
