@@ -61,14 +61,28 @@
 }
 
 \problem{
+    f16m2q7
     w20q4q6
+    \xxxxxx
 }{
-    What are two challenges to using loop unrolling
+    Why is loop unrolling a valuable optimization technique? 
+    What are 2 challenges to using it?
 }{
-    Don't know how much to unroll  
+    It allows us to make bigger basic blocks to do code scheduling 
 
-    Register pressure
+    \begin{enumerate}
+        \item The limited number of registers 
+        \item Don't know how to decide how many times to unroll        
+    \end{enumerate}
+
+    OR
+
+    \begin{enumerate}
+        \item Don't know how much to unroll  
+        \item Register pressure        
+    \end{enumerate}
 }
+
 
 \problem{
     f15m2q7

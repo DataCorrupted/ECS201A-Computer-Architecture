@@ -37,17 +37,6 @@
 }
 
 \problem{
-    f16m2q7
-}{
-    Why is loop unrolling a valuable optimization technique? What are 2 challenges to using it?
-}{
-    It allows us to make bigger basic blocks to do code scheduling 
-
-    a) The limited number of registers 
-    b) Don't know how to decide how many times to unroll
-}
-
-\problem{
     f12m2q10
     f14m2p2
     f15m2q8
@@ -76,33 +65,6 @@
     Single instruction operated on these VRs, such that the single instruction do multiple operations on elements of the VRs. 
 
     Data level parallelism.
-}
-
-\problem{
-    f04m1q16
-    w10m1q10
-    w12f0p1
-    f13f0p1
-    f14m2p2
-    f15m2q12
-    f15f0p2
-    f15f1p1
-    f16m2q11
-    f16f0p1
-    w19m2q10
-}{
-    What is the primary difference between superscalar and VLIW processors? 
-    Give one advantage and one disadvantage of using each approach. 
-    (Compare and contrast VLIW and superscalar with two advantage and one disadvantage.)
-    (These have to be different - in other words, if the advantage of superscalar is X, then you can’t say a disadvantage of VLIW is that it can’t do X.)
-}{
-    \textbf{Superscalar}: hardware does dynamic scheduling  \\
-    Pro: better at prediction and disambiguation \& no recompilation on hardware changes \\
-    Con: more power consumption \& HW complexity.
-
-    \textbf{VLIW}: complier does static scheduling \\ 
-    Pro: simpler hardware, save cost \& power efficient\\
-    Con: cannot use runtime information \& \warn{Memory ambiguity}\\
 }
 
 \problem{

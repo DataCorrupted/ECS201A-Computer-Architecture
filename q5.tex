@@ -28,16 +28,33 @@
     \pg{184} Operation executes as soon as their operands are available.
 }
 
+
 \problem{
-    w20q5q4
-    \xxxxxx
+    f04m1q16
+    w10m1q10
+    w12f0p1
+    f13f0p1
+    f14m2p2
+    f15m2q12
+    f15f0p2
+    f15f1p1
+    f16m2q11
+    f16f0p1
+    w19m2q10
+    w2015q4
 }{
-    We have talked about two types of scheduling(static and dynamic). 
-    Which type does a superscalar machine use? 
-    Which one is primarily used in a VLIW machine?
+    What is the primary difference between superscalar and VLIW processors? 
+    Give one advantage and one disadvantage of using each approach. 
+    (Compare and contrast VLIW and superscalar with two advantage and one disadvantage.)
+    (These have to be different - in other words, if the advantage of superscalar is X, then you can’t say a disadvantage of VLIW is that it can’t do X.)
 }{
-    VILW: static, \\
-    Superscalar: both static and dynamic,
+    \textbf{Superscalar}: hardware does dynamic scheduling  \\
+    Pro: better at prediction and disambiguation \& no recompilation on hardware changes \\
+    Con: more power consumption \& HW complexity.
+
+    \textbf{VLIW}: complier does static scheduling \\ 
+    Pro: simpler hardware, save cost \& power efficient\\
+    Con: cannot use runtime information \& \warn{Memory ambiguity}\\
 }
 
 \problem{
@@ -70,8 +87,8 @@
 
     OR
 
-    - 8-issue machine has more hardware and does more speculation, and thus requires lots of power. \\
-    - If we don't have enough parallelism available, it will have many bubbles and waste energy \\
+    8-issue machine has more hardware and does more speculation, and thus requires lots of power. 
+    If we don't have enough parallelism available, it will have many bubbles and waste energy 
     Back then we don't care about that, but now the condition has changed and the energy efficiency is more significant now.
 
 }
