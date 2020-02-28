@@ -1,0 +1,56 @@
+
+\problem{
+    f16m2q16
+}{
+    Assuming a 19-bit address and a 256-byte Direct Mapped cache with a linesize=2, show how an address is partitioned/interpreted by the cache.
+}{
+    offset = 1 bit \\
+    256/2 = 128 = $2^7$  entry = 7 bits \\
+    tag  = 11 bits
+}
+
+\problem{
+    f16m2q17
+}{
+    Assuming an 19-bit address and an 80-byte 10-way Set Associative cache with a linesize=4, show how an address is partitioned/interpreted by the cache.
+}{
+    offset = 2 bits \\
+    80/(10*4) = 2 = $2^1$  set = 1 bit \\
+    tag = 16 bits
+}
+
+\problem{
+    f16m2q18
+}{
+    Assuming an 19-bit address and a 328-byte Fully Associative cache with a linesize=8, show how an address is partitioned/interpreted by the cache.
+}{
+    offset = 3 bits \\
+    tag = 16 bits
+}
+
+\problem{
+    f16m2q19
+}{
+    Given a 1 Megabyte physical memory, a 22-bit Virtual address, and a page size of 1K bytes, write down the number of entries in the Page Table, and the width of each entry.
+}{
+   1M = $2^{20}$ \\
+   1K = $2^{10}$ \\
+   $(2^{20})/(2^{10}) = 2^{10} \rightarrow$ 10-bit wide \\
+   PM: 10 | 10 \\
+   VM: 12 | 10 \\
+   $2^{12}$ entries
+}
+
+\problem{
+    f16m2q20
+}{
+    Given a 1 Megabyte physical memory, a 34-bit Virtual address, and a page size of 2K bytes, write down the number of entries in the Page Table, and the width of each entry. Is there a problem with this configuration? If so, what is the problem?
+}{
+    1M = $2^{20}$ \\
+    2K = $2^{11}$ \\
+    $(2^{20})/(2^{11}) = 2^9 \rightarrow$ 9-bit wide \\
+    PM: 9 | 11 \\
+    VM: 23 | 11 \\
+    $2^{23}$ entries \\
+    Problem: It is too large to store in 1M physical memory. We can use two page tables. One is base, another one is secondary.
+}
