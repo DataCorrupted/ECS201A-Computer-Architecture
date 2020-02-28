@@ -32,7 +32,7 @@
 }{
     Writes to a cache are inherently slower than reads from a cache - why?
 }{
-     \todo
+     Read can do check tags and read data in parallel. However, write is inherently serial / sequential, so we have to check tags before writing the data to the cache. 
 }
 
 \problem{
@@ -54,7 +54,7 @@
 }{
     Compilers have trouble optimizing code that involves reads and writes to memory. Why? (The answer has nothing to do with how slow memory is - that is a different problem altogether).
 }{
-     \todo
+     Hazards through memory system makes it hard to optimize the code by compiler. Finding dependencies through memory is hard. Compilers can't calculate the physical address at compile time, only hardware knows in runtime. 
 }
 
 \problem{
@@ -73,6 +73,16 @@
 }
 
 \problem{
+    f16m2q5
+}{
+    Processors have been built that were able to issue 8 instructions at a time using a fast clock. However, these processors are no longer being built - why not? Why would you choose a 3-issue machine over an 8-issue machine, if the clock rates were the same?
+}{
+     - 8-issue machine has more hardware and does more speculation, and thus requires lots of power. \\
+     - If we don't have enough parallelism available, it will have many bubbles and waste energy \\
+     Back then we don't care about that, but now the condition has changed and the energy efficiency is more significant now.
+}
+
+\problem{
     f15m2q7
     f16m2q6
 }{
@@ -80,7 +90,8 @@
     Describe what it is, and why it is used. 
     Your description can (and probably should) include sketches and drawings.
 }{
-     \todo
+     - A meta predictor that predicts which predictor should be used \\
+     - It's used because each predictor performs differently based on the situation. For example, 2-bit predictor performs better than G-share when we jump to somewhere new. but after G-share learns, it will perform better.
 }
 
 \problem{
@@ -88,7 +99,8 @@
 }{
     Why is loop unrolling a valuable optimization technique? What are 2 challenges to using it?
 }{
-     \todo
+     - It allows to make bigger basic blocks to do code scheduling \\
+     - (1) more registers (2) don't know how to decide how many times to unroll
 }
 
 \problem{
@@ -113,7 +125,9 @@
 }{
     Supporting precise interrupts in machines that allow out of order completion is a challenge. Briefly explain what a precise interrupt is, why it is a challenge in OOO machines, and describe the main technique used today to provide precise interrupts.
 }{
-     \todo
+     - It is the interruption when all the instructions before the interrupt have completed, but none afterwards. \\
+     - it is a challenge because ??? \\
+     -  technique: reorder buffer (ROB)
 }
 
 \problem{
@@ -122,9 +136,8 @@
 }{
     Briefly outline how a Vector machine works, and what type of parallelism it is exploiting.
 }{
-    \todo
-
-    Data level parallelism(SIMD)
+    - There are several vector registers (VRs), fill them up. Single instruction operated on these VRs, such that the single instruction do multiple operations on elements of the VRs. \\
+    - Data level parallelism.
 }
 
 \problem{
@@ -140,16 +153,16 @@
     f16f0p1
 }{
     What is the primary difference between superscalar and VLIW processors? 
-    Give one advantage and one disadvantage of using each approach. / Compare and contrast VLIW and superscalar with two advantages and one disadvantage.
+    Give one advantage and one disadvantage of using each approach. 
+    (Compare and contrast VLIW and superscalar with two advantage and one disadvantage.)
     (These have to be different - in other words, if the advantage of superscalar is X, then you can’t say a disadvantage of VLIW is that it can’t do X.)
 }{
-    Superscalar uses hardware to do dynamic scheduling, while VLIW uses software to do static scheduling.
-
-    Pro of superscalar: No recompilation on hardware changes. \\
-    Con of superscalar: Hardware complexity.
-
-    Pro of VLIW: Power efficient. \\
-    Con of VLIW: Memory ambiguity.
+     - superscalar: hardware does dynamic scheduling  \\
+       adv: better at prediction and disambiguation \\
+       disadv: more power consumption \\
+     - VLIW: complier does static scheduling \\ 
+     	adv: simpler hardware, save cost \\
+	    disadv: cannot use runtime information \\
 }
 
 \problem{
@@ -166,10 +179,92 @@
     Give at least 2 examples of things you should do differently now, and be sure to explain in detail why 
     (what is the problem you are overcoming?)
 }{
-    \begin{enumerate}
-        \item Use fewer pointers, as they make compilers hard to do optimization.
-        \item Write incline code so I can make bigger basic blocks.
-    \end{enumerate}
+    (1) avoid using pointers: pointers screw up register allocation when compiling \\
+    (2) avoid using recursions: return address stack can be overflowed
+    Avoiding using pointers make the biggest difference in performance, because recursion in not frequently used compared to pointers in general application
+}
+
+\problem{
+    f16m2q13
+    w20q5q8
+}{
+    (Dependencies recognization \& register substitution) 
+}{
+    refer to the exam
+}
+
+\problem{
+    f16m2q14
+}{
+    (Dependencies recognization \& NOPS insertion) 
+}{
+    refer to the exam
+}
+
+\problem{
+    f16m2q15
+    w20q5q9
+}{
+    (Fine / Coarse scheduling) \\
+    \nop
+}{
+    refer to the exam
+}
+
+\problem{
+    f16m2q16
+}{
+    Assuming a 19-bit address and a 256-byte Direct Mapped cache with a linesize=2, show how an address is partitioned/interpreted by the cache.
+}{
+    offset = 1 bit \\
+    256/2 = 128 = $2^7$  entry = 7 bits \\
+    tag  = 11 bits
+}
+
+\problem{
+    f16m2q17
+}{
+    Assuming an 19-bit address and an 80-byte 10-way Set Associative cache with a linesize=4, show how an address is partitioned/interpreted by the cache.
+}{
+    offset = 2 bits \\
+    80/(10*4) = 2 = $2^1$  set = 1 bit \\
+    tag = 16 bits
+}
+
+\problem{
+    f16m2q18
+}{
+    Assuming an 19-bit address and a 328-byte Fully Associative cache with a linesize=8, show how an address is partitioned/interpreted by the cache.
+}{
+    offset = 3 bits \\
+    tag = 16 bits
+}
+
+\problem{
+    f16m2q19
+}{
+    Given a 1 Megabyte physical memory, a 22-bit Virtual address, and a page size of 1K bytes, write down the number of entries in the Page Table, and the width of each entry.
+}{
+   1M = $2^{20}$ \\
+   1K = $2^{10}$ \\
+   $(2^{20})/(2^{10}) = 2^{10} \rightarrow$ 10-bit wide \\
+   PM: 10 | 10 \\
+   VM: 12 | 10 \\
+   $2^{12}$ entries
+}
+
+\problem{
+    f16m2q20
+}{
+    Given a 1 Megabyte physical memory, a 34-bit Virtual address, and a page size of 2K bytes, write down the number of entries in the Page Table, and the width of each entry. Is there a problem with this configuration? If so, what is the problem?
+}{
+    1M = $2^{20}$ \\
+    2K = $2^{11}$ \\
+    $(2^{20})/(2^{11}) = 2^9 \rightarrow$ 9-bit wide \\
+    PM: 9 | 11 \\
+    VM: 23 | 11 \\
+    $2^{23}$ entries \\
+    Problem: It is too large to store in 1M physical memory. We can use two page tables. One is base, another one is secondary.
 }
 
 \problem{
