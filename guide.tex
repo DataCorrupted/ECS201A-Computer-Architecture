@@ -81,7 +81,7 @@ For example, to get all \textit{Appearance} on the problem we mentioned above, g
 \subsection*{Usage}
 
 Type in \lstinline{make} to compile to a pdf file. 
-You can turn \texttt{showAns} in \texttt{main.tex:36} to \texttt{false} to hide answers.
+You can turn \lstinline{showAns} in \texttt{main.tex:53} to \lstinline{false} to hide answers.
 Should you have any questions, feel free to contact us.
 
 \subsection*{Selection pool}
@@ -95,7 +95,8 @@ Please use \lstinline|\st{<content>}| to strikethrough \st{contents} in the pool
 
 The pool consists of the following:
 
-\begin{minipage}[t]{0.24\textwidth}
+\def\width{0.24}
+\begin{minipage}[t]{\width\textwidth}
     \subsubsection*{Winter 20}
     \begin{itemize}
         \item \texttt{w20q1}
@@ -109,7 +110,7 @@ The pool consists of the following:
         \item \texttt{w20m3}
     \end{itemize}
 \end{minipage}
-\begin{minipage}[t]{0.24\textwidth}
+\begin{minipage}[t]{\width\textwidth}
     \subsubsection*{Midterm1s}
     \begin{itemize}
         \item \texttt{f12m1}
@@ -119,21 +120,23 @@ The pool consists of the following:
         \item \texttt{w19m1}
     \end{itemize}    
 \end{minipage}
-\begin{minipage}[t]{0.24\textwidth}
+\begin{minipage}[t]{\width\textwidth}
     \subsubsection*{Midterm2s}
     \begin{itemize}
         \item \texttt{f10m2}
         \item \texttt{f12m2}
-        \item \st{\texttt{f14m2}(Kent)}
-        \item \st{\texttt{f15m2}(Peter)}
-        \item \texttt{f16m2}(Xiaoyu)
+        \item \st{\texttt{f14m2}}
+        \item \st{\texttt{f15m2}}
+        \item \st{\texttt{f16m2}}
+        \item \st{\texttt{w19m2}}
     \end{itemize}    
 \end{minipage}
-\begin{minipage}[t]{0.24\textwidth}
+\begin{minipage}[t]{\width\textwidth}
     \subsubsection*{Finals}
     \begin{itemize}
         \item \texttt{f13f0}
         \item \texttt{f15f0}
         \item \texttt{f16f0}
+        \item \texttt{w19f0}
     \end{itemize}
 \end{minipage}
