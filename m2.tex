@@ -1,22 +1,6 @@
 \section*{Midterm 2 (Feb 28, 2020)}
 
 \problem{
-    f15m2q1
-}{
-    Give 1 technique that can be used to reduce the Miss Rate.
-}{
-    \todo
-}
-
-\problem{
-    f15m2q2
-}{
-    Give 1 technique that can be used to reduce the Hit Time.
-}{
-    \todo
-}
-
-\problem{
     f14m2q4
     f15m2q5
 }{
@@ -32,7 +16,8 @@
 }{
     Writes to a cache are inherently slower than reads from a cache - why?
 }{
-     Read can do check tags and read data in parallel. However, write is inherently serial / sequential, so we have to check tags before writing the data to the cache. 
+    Read can do check tags and read data in parallel. 
+    However, writing is inherently serial/sequential, so we have to check tags before writing the data to the cache. 
 }
 
 \problem{
@@ -73,34 +58,14 @@
 }
 
 \problem{
-    f16m2q5
-}{
-    Processors have been built that were able to issue 8 instructions at a time using a fast clock. However, these processors are no longer being built - why not? Why would you choose a 3-issue machine over an 8-issue machine, if the clock rates were the same?
-}{
-     - 8-issue machine has more hardware and does more speculation, and thus requires lots of power. \\
-     - If we don't have enough parallelism available, it will have many bubbles and waste energy \\
-     Back then we don't care about that, but now the condition has changed and the energy efficiency is more significant now.
-}
-
-\problem{
-    f15m2q7
-    f16m2q6
-}{
-    Intel uses a Tournament predictor in some of their processors. 
-    Describe what it is, and why it is used. 
-    Your description can (and probably should) include sketches and drawings.
-}{
-     - A meta predictor that predicts which predictor should be used \\
-     - It's used because each predictor performs differently based on the situation. For example, 2-bit predictor performs better than G-share when we jump to somewhere new. but after G-share learns, it will perform better.
-}
-
-\problem{
     f16m2q7
 }{
     Why is loop unrolling a valuable optimization technique? What are 2 challenges to using it?
 }{
-     - It allows to make bigger basic blocks to do code scheduling \\
-     - (1) more registers (2) don't know how to decide how many times to unroll
+    It allows us to make bigger basic blocks to do code scheduling 
+
+    a) The limited number of registers 
+    b) Don't know how to decide how many times to unroll
 }
 
 \problem{
@@ -121,23 +86,15 @@
 }
 
 \problem{
-    f16m2q9
-}{
-    Supporting precise interrupts in machines that allow out of order completion is a challenge. Briefly explain what a precise interrupt is, why it is a challenge in OOO machines, and describe the main technique used today to provide precise interrupts.
-}{
-     - It is the interruption when all the instructions before the interrupt have completed, but none afterwards. \\
-     - it is a challenge because ??? \\
-     -  technique: reorder buffer (ROB)
-}
-
-\problem{
     f15m2q11
     f16m2q10
 }{
     Briefly outline how a Vector machine works, and what type of parallelism it is exploiting.
 }{
-    - There are several vector registers (VRs), fill them up. Single instruction operated on these VRs, such that the single instruction do multiple operations on elements of the VRs. \\
-    - Data level parallelism.
+    There are several vector registers(VR), fill them up. 
+    Single instruction operated on these VRs, such that the single instruction do multiple operations on elements of the VRs. 
+
+    Data level parallelism.
 }
 
 \problem{
@@ -157,12 +114,13 @@
     (Compare and contrast VLIW and superscalar with two advantage and one disadvantage.)
     (These have to be different - in other words, if the advantage of superscalar is X, then you can’t say a disadvantage of VLIW is that it can’t do X.)
 }{
-     - superscalar: hardware does dynamic scheduling  \\
-       adv: better at prediction and disambiguation \\
-       disadv: more power consumption \\
-     - VLIW: complier does static scheduling \\ 
-     	adv: simpler hardware, save cost \\
-	    disadv: cannot use runtime information \\
+    \textbf{Superscalar}: hardware does dynamic scheduling  \\
+    Pro: better at prediction and disambiguation \& no recompilation on hardware changes \\
+    Con: more power consumption \& HW complexity.
+
+    \textbf{VLIW}: complier does static scheduling \\ 
+    Pro: simpler hardware, save cost \& power efficient\\
+    Con: cannot use runtime information \& \warn{Memory ambiguity}\\
 }
 
 \problem{
@@ -179,9 +137,13 @@
     Give at least 2 examples of things you should do differently now, and be sure to explain in detail why 
     (what is the problem you are overcoming?)
 }{
-    (1) avoid using pointers: pointers screw up register allocation when compiling \\
-    (2) avoid using recursions: return address stack can be overflowed
-    Avoiding using pointers make the biggest difference in performance, because recursion in not frequently used compared to pointers in general application
+    \begin{enumerate}
+        \item avoid using pointers: pointers screw up register allocation when compiling 
+        \item avoid using recursions: return address stack can be overflowed 
+        \item inline functions: to make larger basic blocks
+    \end{enumerate}
+
+    Avoiding using pointers make the biggest difference in performance, as in general applications pointers are more widely used.
 }
 
 \problem{
@@ -197,16 +159,6 @@
     f16m2q14
 }{
     (Dependencies recognization \& NOPS insertion) 
-}{
-    refer to the exam
-}
-
-\problem{
-    f16m2q15
-    w20q5q9
-}{
-    (Fine / Coarse scheduling) \\
-    \nop
 }{
     refer to the exam
 }
@@ -268,15 +220,6 @@
 }
 
 \problem{
-    f14m2q2
-}{
-    Which data hazard occurs when instructions are allowed to complete out of order? 
-    Which one occurs when instructions are allowed to issue out of order?
-}{
-    \todo
-}
-
-\problem{
     f14m2q5
 }{
     Speculation is a very useful technique for improving performance. 
@@ -284,21 +227,3 @@
 }{
     \todo
 }
-
-\problem{
-    f14m2q5
-}{
-    Compilers have trouble optimizing code that involves reads and writes to memory. Why? (The answer
-has nothing to do with how slow memory is - that is a different problem altogether).
-}{
-    Hazards through the memory system.
-}
-
-\problem{
-    f14m2q7
-}{
-    The book states that slow and wide architectures can be more power efficient than fast and narrow architectures. Explain why. Also, explain the underlying assumption that is being made, and why it is that we are still making narrow fast machines.
-}{
-    \todo
-}
-

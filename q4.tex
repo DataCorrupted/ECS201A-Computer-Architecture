@@ -63,15 +63,26 @@
 }
 
 \problem{
+    f15m2q7
+    f15f1p1
+    f16m2q6
+    f16f0p1
     w20q4q7
 }{
-    What is a Tournament predictor? Describe how it works and why it is used.
+    Intel uses a Tournament predictor in some of their processors. 
+    Describe what it is, and why it is used. 
+    Your description can (and probably should) include sketches and drawings.
 }{
-    \todo
+    Tournament predictor is a meta predictor that predicts which predictor should be used
+
+    It's used because each predictor performs differently based on the situation. 
+    For example, 2-bit predictor performs better than G-share when we jump to somewhere new. 
+    But after G-share learns, it will perform better.
 }
 
 \problem{
     f12m2q13
+    f16m2q9
     f16f0p1
     f15f1p1
     w20q4q8
@@ -84,23 +95,19 @@
     
     \todo
 
-    \todo
+    ROB and \todo
 }
 
 \problem{
-    w20q4q9
-    \xxxxxx
+    f14m2q2
+    f14f0p9
+    f15f1p6
+    f16f0p7
+    w19m1q19
+    w20q4q9/10
 }{
     If a standard pipeline is modified to support \OOO completion, what new data hazard is introduced?
-}{
-    WAW
-}
-
-\problem{
-    w20q4q10
-    \xxxxxx
-}{
     If in addition to completing \OOO, instructions were allowed to issue \OOO, what new data hazard would be introduced.
 }{
-    WAR
+    WAW, WAR
 }
