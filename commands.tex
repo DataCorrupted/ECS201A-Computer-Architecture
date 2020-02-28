@@ -22,3 +22,9 @@
 	\fi
 
 }
+
+\newcommand{\depend}[4]{\textit{inst#1}.#3 $\Rightarrow$ \textit{inst#2}.#3 \textbf{(#4)}}
+\newcommand{\RAW}[3]{\depend{#1}{#2}{#3}{RAW}}
+\newcommand{\WAW}[3]{\depend{#1}{#2}{#3}{WAW}}
+\newcommand{\WAR}[3]{\depend{#1}{#2}{#3}{WAR}}
+\newcommand{\RAR}[3]{\depend{#1}{#2}{#3}{RAR}}

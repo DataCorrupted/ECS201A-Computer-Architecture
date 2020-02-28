@@ -76,3 +76,61 @@
 }{
     \todo
 }
+
+\problem{
+    w20q5q8
+}{
+    (Dependencies recognization \& register substitution) \\
+    \nop
+}{
+    a)
+    \begin{itemize}
+        \item \RAW{1}{4}{F3}  
+        \item \WAR{1}{3}{F5}      
+        \item \WAR{1}{2}{F7}
+        \item \WAR{1}{4}{F7}
+        \item \WAR{2}{3}{F5}
+        \item \RAW{2}{3}{F7}
+        \item \WAW{2}{4}{F7}
+        \item \WAR{3}{4}{F7}
+    \end{itemize}
+
+    b)
+    15, 14, 13, 7, 11, 5, 9, 4
+
+    c)
+    \begin{itemize}
+        \item \RAW{1}{4}{P7}
+        \item \RAW{2}{3}{P6}
+    \end{itemize}
+
+}
+
+\problem{
+    w20q5q9
+}{
+    (Fine / Coarse scheduling) \\
+    \nop
+}{
+    a)\\
+        A A A   \\
+        A A     \\
+        B       \\
+        A A     \\
+        B       \\
+        B B     \\
+
+    b)\\
+        A A A   \\
+        B       \\
+        C C     \\
+        A A A   \\
+        B       \\
+        C       \\
+
+    c)\\
+        A A B C C \\
+        A A A B C \\
+        B B C C C \\
+        A A B B B \\
+}
