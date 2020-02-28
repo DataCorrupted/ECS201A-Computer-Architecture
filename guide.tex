@@ -20,29 +20,16 @@ Each \textit{appearance} should take up a line to avoid merge conflict.
 It is suggested that you put \textit{appearance} in the order of time.
 If you don't have time to find all \textit{appearance}, use command \lstinline{\xxxxxx} instead.
 
-\texttt{Body} refers to the question itself. 
+\textit{Body} refers to the question itself. 
 Different exams may have altered questions, please try to put a superset of all similar ones.
 If the body is too long or involves code/drawing, you may skip it by put command \lstinline{\nop} here.
 Then it would be crucial that you put correct \textit{Appearance} so we can find it.
 
-Please provide most accurate \texttt{Ans} possible.
+Please provide most accurate \textit{Ans} possible.
 
-Please use command \texttt{problem} to add a problem.
+Please use command \lstinline|\problem{<Appearance>}{Body}{Ans}| to add a problem.
 For code hygiene, each sentence should only take up one line to avoid merge conflict.
-Please use the following format:
-\begin{lstlisting}
-\problem{
-    <Appearance1>
-    <Appearance2>
-    <Appearance3>
-} {
-    <Body>
-} {
-    <Ans>
-}
-\end{lstlisting}
-
-If you put 
+For example, if you put:
 \begin{lstlisting}
 \problem{
     f12m1q1
@@ -81,9 +68,8 @@ you get:
 \subsubsection*{Where to put a problem}
 
 We want to arrange all the problems in the order of our classes.
-So we set up different files, including \texttt{q1.tex}, \texttt{q2.tex}, \texttt{m1.tex}, etc.
-All questions before quiz 1(or all questions related to the ones in \texttt{q1}) should be put in \texttt{q1}.
-Similarly, put everything between quiz4 and midterm2 in \texttt{m2.tex}.
+So we set up different files, including \texttt{w2.tex} to \texttt{w10.tex}(Week 1 and Week 2 are combined in \texttt{w2.tex}), indicating from week 2 to week 10.
+All questions related to the material in a certain week should be put in the corresponding file.
 
 \subsubsection*{Pro tip on how to find all \textit{Appearance}}
 
@@ -91,7 +77,6 @@ Farrens (unwisely) put all his pdf under one publically available folder, making
 Use google search to target on his website using \texttt{site} keyword, search on important keyword and you are good to go.
 
 For example, to get all \textit{Appearance} on the problem we mentioned above, google search \texttt{minimum feature size decreases site:http://american.cs.ucdavis.edu/academic/ecs201a/postscript/}
-
 
 \subsection*{Usage}
 
@@ -120,6 +105,8 @@ The pool consists of the following:
         \item \st{\texttt{w20q4}}
         \item \st{\texttt{w20q5}}
         \item \texttt{w20m2}
+        \item \texttt{w20q6}
+        \item \texttt{w20m3}
     \end{itemize}
 \end{minipage}
 \begin{minipage}[t]{0.24\textwidth}
