@@ -152,7 +152,22 @@
     Speculation is a very useful technique for improving performance. 
     However, it is not being used as extensively as it once was - why not?
 }{
-    \todo
+    \warn{
+        \pg{201}
+        Incorrect speculation does not improve performance; 
+        in fact, it typically harms performance dramatically lowers energy efficiency.
+    }
+
+    OR
+    
+    \warn{
+        \pg{210}
+        \begin{itemize}
+            \item Speculation is not free. It takes time and energy, and the recovery of incorrect speculation further reduces performance. 
+            \item In addition, to support the higher instruction execution rate needed to benefit from speculation, the processor must have additional resources, which take silicon area and power. 
+            \item Finally, if speculation causes an exceptional event to occur, such as a cache or translation lookaside buffer (TLB) miss, the potential for significant performance loss increases, if that event would not have occurred without speculation.
+        \end{itemize}
+    }
 }
 
 \problem{
