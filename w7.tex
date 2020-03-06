@@ -50,10 +50,10 @@
 }{
     \textbf{Superscalar}: hardware does dynamic scheduling  \\
     Pro: better at prediction and disambiguation \& no recompilation on hardware changes \\
-    Con: more power consumption \& HW complexity.
+    Con: only have a small window which it can schedule code \& HW complexity and more power consumption.
 
     \textbf{VLIW}: complier does static scheduling \\ 
-    Pro: simpler hardware, save cost \& power efficient\\
+    Pro: simpler hardware and clock rate can be faster \& compiler can see the the whole program to do scheduling\\
     Con: cannot use runtime information \& \warn{Memory ambiguity}\\
 }
 
@@ -146,12 +146,14 @@
 }{
     \begin{minipage}[t]{0.33\textwidth}
         a)\\
+        A A     \\
         A A A   \\
-        A A     \\
         B       \\
-        A A     \\
         B       \\
         B B     \\
+        B B B   \\
+        C C     \\
+        C       \\
     \end{minipage}
     \begin{minipage}[t]{0.33\textwidth}
         b)\\
@@ -217,12 +219,13 @@
     (what is the problem you are overcoming?)
 }{
     \begin{enumerate}
-        \item avoid using pointers: pointers screw up register allocation when compiling 
-        \item avoid using recursions: return address stack can be overflowed 
+        \item avoid using pointers: pointers screw up \textbf{register allocation} when compiling 
         \item inline functions: to make larger basic blocks
     \end{enumerate}
 
-    Avoiding using pointers make the biggest difference in performance, as in general applications pointers are more widely used.
+    Avoiding using pointers make the biggest difference in performance, 
+    as in general application pointers are more widely used.
+
 }
 
 \problem{
