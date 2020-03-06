@@ -1,1 +1,119 @@
-\section*{Week 9 (3/1 - 3/7; Chp.2 \& Chp.5, Quiz 6)}
+\section*{Week 9 (3/1 - 3/7; Appx.B \& Chp.2, Quiz 6)}
+
+\problem{
+    \xxxxxx
+}{
+    What is the goal of the memory hierarchy, as stated in class?
+}{
+    Makes the memory system perform as if made of fastest, cost as if made of cheapest.
+}
+
+\problem{
+    \xxxxxx
+}{
+    Writes to a cache are inherently slower than reads from a cache. Why?
+}{
+    You can read the tag and simultaneously read the data location, Can discard the data read if the tag didn't match.
+    However, you cannot do that on a write, because the write changes the state of the machine - you must first do the tag compare to ensure the write should, in fact change the state.
+}
+
+\problem{
+    \xxxxxx
+}{
+    AMAT
+}{
+    Average memory access time = Hit time + Miss rate * Miss penalty
+}
+
+\problem{
+    \xxxxxx
+}{
+    What principle makes Virtual Memory possible
+}{
+    Locality of reference
+}
+\problem{
+    \xxxxxx
+    w19f0q5
+}{
+    Which type of cache miss can be reduced by using shorter lines?
+}{
+    Capacity
+}
+\problem{
+    \xxxxxx
+    w19f0q6
+}{
+    Which type of cache miss can be reduced by using longer lines?
+}{
+    Compulsive
+}
+\problem{
+    \xxxxxx
+    w19f0q7
+}{
+    Using a different mapping scheme will reduce which type of cache miss?
+}{
+    Conflict
+}
+
+\problem{
+    \xxxxxx
+    w19f0q34
+}{
+    The designer has the choice of using a physically addressed cache or a virtually addressed cache.
+    Explain the difference (drawing a picture is fine!), and give 1 advantage for each.
+}{
+    \todo
+}
+
+\problem{
+    \xxxxxx
+    w19f0q37
+}{
+    Find the Average Memory Access Time (AMAT) for a processor with a 1 ns clock cycle time, a miss
+    penalty of 20 clock cycles, a miss rate of 0.10 misses per instruction, and a cache access time (including hit detection) of 1 clock cycle. 
+    Assume that the read and write miss penalties are the same and ignore other write stalls.
+}{
+    \begin{align*}
+        \texttt{AMAT} & = \texttt{Hit time} + \texttt{Miss rate} * \texttt{Miss penalty} \\
+                      & = 1 \texttt{ clock} * 1 \texttt{ ns/clock} + 0.10 * 20 \texttt{ clock(s)} * 1 \texttt{ ns/clock}  \\
+                      & = 3 \texttt{ ns}
+    \end{align*}
+}
+
+\problem{
+    f15f1p5
+    w19f0q38
+    \xxxxxx
+}{
+    For each technique in the following table, indicate how(on average) the 3 terms of AMAT are affected.
+    (Assume there is a single L1 cache.)
+}{
+    \begin{center}
+        \begin{tabular}{  m{0.35\textwidth} ccc }
+        \toprule
+            Techinque                     & Hit time & Miss rate & Miss penalty \\
+        \midrule
+            Increasing line/block size    &   & - & + \\ \hline
+            Increasing Associativity      & + & - &   \\ \hline
+            Decreasing cache size         & - & + &   \\ \hline     
+            HW/compiler controlled prefetch
+                                          &   & - & - \\ \hline 
+            Compiler optimizations        &   & - &   \\ \hline 
+            Non-blocking cache            &   &   & - \\ \hline  
+            Virtually addressed cache     & - &   &   \\ \hline       
+            Victim cache(victim cache and regular cache accessed in parallel)
+                                          &   & - &   \\ \hline    
+            Critical word first           &   &   & - \\ \hline        
+            Multilevel cache(first level) & - & + & - \\ \hline
+            Give priority to read translation during indexing of a cache
+                                          &   &   & - \\ \hline      
+            Merging write bufer           &   &   & - \\ \hline        
+            Small \& simple first-level cache 
+                                          & - &   &   \\ \hline
+            Way prediction                & - &   &   \\ 
+        \bottomrule
+        \end{tabular}
+    \end{center}
+}
