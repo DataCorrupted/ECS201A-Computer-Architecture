@@ -1,24 +1,33 @@
 \section*{Week 9 (3/1 - 3/7; Appx.B \& Chp.2, Quiz 6)}
 
 \problem{
-    \xxxxxx
+    f04m2q3
+    w08m2q3
+    f12f0p2
+    w12f0p2
+    f14f0p2
+    f16f0p2
 }{
-    What is the goal of the memory hierarchy, as stated in class?
+    What is the goal of the memory hierarchy, as stated in class? 
+    What two principles make it work? 
+    (Two types of the same principle, actually).
 }{
-    Makes the memory system perform as if made of fastest, cost as if made of cheapest.
+    \pg{72} The goal is to provide a memory system with cost per byte almost as low as the cheapest level of memory and speed almost as fast as the fastest level.
+    
+    \pg{72} \textit{Locality} of reference: \textit{Spacial locality} \& \textit{Temporal locality}.
 }
 
 \problem{
     \xxxxxx
 }{
-    Writes to a cache are inherently slower than reads from a cache. Why?
+    Does an average program's locality behavior stay the same while it is executing, or does it vary?
 }{
-    You can read the tag and simultaneously read the data location, Can discard the data read if the tag didn't match.
-    However, you cannot do that on a write, because the write changes the state of the machine - you must first do the tag compare to ensure the write should, in fact change the state.
+    Vary
 }
 
 \problem{
     w19f0q23
+    \xxxxxx
 }{
     Which is harder to write a program for, a shared memory machine or a message passing machine?
     Why?
@@ -51,26 +60,36 @@
 \problem{
     \xxxxxx
 }{
-    AMAT
+    Why is it difficult to come up with good benchmarks that will work across all types of parallel processors?
 }{
-    Average memory access time = Hit time + Miss rate * Miss penalty
+    Because the message-passing machine and shared memory machine works differently.
+    They have different algorithms, and different programming approaches.
 }
 
 \problem{
-    f04m2q3
-    w08m2q3
-    f12f0p2
-    w12f0p2
-    f14f0p2
-    f16f0p2
+    \xxxxxx
 }{
-    What is the goal of the memory hierarchy, as stated in class? 
-    What two principles make it work? 
-    (Two types of the same principle, actually).
+    Coherence refers to \blank is returned while consistency has to do with \blank.
+    (Using less than 20 words explain the differences between coherence and consistency.)
 }{
-    \pg{72} The goal is to provide a memory system with cost per byte almost as low as the cheapest level of memory and speed almost as fast as the fastest level.
-    
-    \pg{72} \textit{Locality} of reference: \textit{Spacial locality} \& \textit{Temporal locality}.
+    What, when
+}
+
+\problem{
+    \xxxxxx
+}{
+    Writes to a cache are inherently slower than reads from a cache. Why?
+}{
+    You can read the tag and simultaneously read the data location, Can discard the data read if the tag didn't match.
+    However, you cannot do that on a write, because the write changes the state of the machine - you must first do the tag compare to ensure the write should, in fact change the state.
+}
+
+\problem{
+    \xxxxxx
+}{
+    AMAT
+}{
+    Average memory access time = Hit time + Miss rate * Miss penalty
 }
 
 \problem{

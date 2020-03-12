@@ -5,9 +5,18 @@
 \newcommand{\pg}[1]{(\textit{p.g. #1})}
 \newcommand{\todo}{\err{\textbf{TODO}}}
 \newcommand{\xxxxxx}{\textbf{xxxxxx}\xspace}
+\newcommand{\appr}[1]{\texttt{#1} }
+\newcommand{\abbr}[3]{
+	\appr{#1} & 
+	\textit{#2} & 
+	\ifx\showAns\true
+		#3 
+	\fi 
+	\\ \hline
+}
 \newcommand{\problem}[3]{
 % Tests it appeared on
-	\hfill\texttt{#1} 
+	\hfill\appr{#1}
 \par 
 % Question
 	\textbf{#2} 
@@ -32,3 +41,5 @@
 \newcommand{\name}{Cheatsheet for 2\texttt{O}1A}
 
 \newcommand{\OOO}{Out-of-order\xspace}
+
+\newcommand{\blank}{$\rule{2cm}{0.15mm}$}
