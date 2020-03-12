@@ -120,7 +120,10 @@
 }{
     When an interrupt happens, every instruction before it has finished and none after can complete.
     
-    To deal with page fault.
+    To deal with a page fault. 
+    OR 
+    Virtual Memory support requires that if you have a page fault, I have to go to service the page fault and come back to restart that instruction.
+
 
     \warn{Because instructions take a different amount of clock cycles to finish}
 

@@ -18,6 +18,37 @@
 }
 
 \problem{
+    w19f0q23
+}{
+    Which is harder to write a program for, a shared memory machine or a message passing machine?
+    Why?
+}{
+    Shared memory machine.
+    Because you need to write the code for communication.
+}
+
+\problem{
+    w19f0q24
+}{
+    Which is more expensive to build - a shared memory machine, or a message passing machine? Why?
+}{
+    Shared memory machine.
+    Because you don' need hardware to support coherent and consistent.
+}
+
+\problem{
+    f12m2q5
+    f13m2q3
+}{
+    Roofline plots what vs what? 
+    Why is this information important?
+}{
+    Arithmetic intensity vs float point performance \& memory performance.
+
+    It lets you calculate if you need to work on improving the memory bandwidth or the float-point hardware.
+}
+
+\problem{
     \xxxxxx
 }{
     AMAT
@@ -26,12 +57,22 @@
 }
 
 \problem{
-    \xxxxxx
+    f04m2q3
+    w08m2q3
+    f12f0p2
+    w12f0p2
+    f14f0p2
+    f16f0p2
 }{
-    What principle makes Virtual Memory possible
+    What is the goal of the memory hierarchy, as stated in class? 
+    What two principles make it work? 
+    (Two types of the same principle, actually).
 }{
-    Locality of reference
+    \pg{72} The goal is to provide a memory system with cost per byte almost as low as the cheapest level of memory and speed almost as fast as the fastest level.
+    
+    \pg{72} \textit{Locality} of reference: \textit{Spacial locality} \& \textit{Temporal locality}.
 }
+
 \problem{
     \xxxxxx
     w19f0q5
