@@ -18,46 +18,27 @@
     \pg{72} \textit{Locality} of reference: \textit{Spacial locality} \& \textit{Temporal locality}.
 }
 
-\problem{
-    w19f0q3
-}{
-    Does an average program's locality behavior stay the same while it is executing, or does it vary?
-}{
-    Vary
-}
 
 \problem{
-    f13f0p3
-    f15f0p3
-    w19f0q23
-}{
-    Which is harder to write a program for, a shared memory machine or a message passing machine?
-    Why?
-}{
-    Shared memory machine.
-    Because you need to write the code for communication.
-}
-
-\problem{
-    f13f0p3
-    f15f0p3
-    w19f0q24
-}{
-    Which is more expensive to build - a shared memory machine, or a message passing machine? 
-    Why?
-}{
-    Shared memory machine
-    Because you don't need hardware to support coherent and consistent.
-}
-
-\problem{
-    w13f0p3
+    w13f0p1
     w15f0p1
-    w19f0q44
 }{
-    How do two processes communicate when running on a shared memory machine?
+    AMAT
 }{
-    Implicitly
+    Average memory access time = Hit time + Miss rate * Miss penalty
+}
+\problem{
+    f15f0p8
+    w19f0q37
+}{
+    Find the Average Memory Access Time (AMAT) for a processor with a 1 ns clock cycle time, a miss penalty of 20 clock cycles, a miss rate of 0.10 misses per instruction, and a cache access time (including hit detection) of 1 clock cycle. 
+    Assume that the read and write miss penalties are the same and ignore other write stalls.
+}{
+    \begin{align*}
+        \texttt{AMAT} & = \texttt{Hit time} + \texttt{Miss rate} * \texttt{Miss penalty} \\
+                      & = 1 \texttt{ clock} * 1 \texttt{ ns/clock} + 0.10 * 20 \texttt{ clock(s)} * 1 \texttt{ ns/clock}  \\
+                      & = 3 \texttt{ ns}
+    \end{align*}
 }
 
 \problem{
@@ -72,35 +53,14 @@
     It lets you calculate if you need to work on improving the memory bandwidth or the float-point hardware.
 }
 
-\problem{
-    w15f0p2
-    w19f0q18
-}{
-    Coherence refers to \blank is returned while consistency has to do with \blank.
-    
-    OR
-
-    Using less than 20 words explain the differences between coherence and consistency.
-
-    OR
-
-    Give a one-word definition of coherence, and a one-word definition of consistency.
-}{
-    What, when
-}
+\subsection*{Cache}
 
 \problem{
-    f13f0p5
-    w19f0q41
+    w19f0q3
 }{
-    (Message passing decision, sampled from w19f0q41)
-
-    \nop
+    Does an average program's locality behavior stay the same while it is executing, or does it vary?
 }{
-    \begin{itemize}
-        \item Figure A: Shared memory
-        \item Figure B: Message passing
-    \end{itemize}
+    Vary
 }
 
 \problem{
@@ -112,34 +72,19 @@
 
 \problem{
     f13f0p3
+    f16m2q1
+    w19m2q3
 }{
     Writes to a cache are inherently slower than reads from a cache. Why?
 }{
     You can read the tag and simultaneously read the data location, Can discard the data read if the tag didn't match.
     However, you cannot do that on a write, because the write changes the state of the machine - you must first do the tag compare to ensure the write should, in fact change the state.
-}
 
-\problem{
-    w13f0p1
-    w15f0p1
-}{
-    AMAT
-}{
-    Average memory access time = Hit time + Miss rate * Miss penalty
-}
+    OR
 
-\problem{
-    f15f0p8
-    w19f0q37
-}{
-    Find the Average Memory Access Time (AMAT) for a processor with a 1 ns clock cycle time, a miss penalty of 20 clock cycles, a miss rate of 0.10 misses per instruction, and a cache access time (including hit detection) of 1 clock cycle. 
-    Assume that the read and write miss penalties are the same and ignore other write stalls.
-}{
-    \begin{align*}
-        \texttt{AMAT} & = \texttt{Hit time} + \texttt{Miss rate} * \texttt{Miss penalty} \\
-                      & = 1 \texttt{ clock} * 1 \texttt{ ns/clock} + 0.10 * 20 \texttt{ clock(s)} * 1 \texttt{ ns/clock}  \\
-                      & = 3 \texttt{ ns}
-    \end{align*}
+    Read can do check tags and read data in parallel. 
+    However, writing is inherently serial/sequential, so we have to check tags before writing the data to the cache. 
+
 }
 
 \problem{
@@ -197,6 +142,53 @@
     FIFO
 }
 
+
+\problem{
+    f13f0p8
+    f15f0p7
+    f16m2q16
+    w19f0q52
+}{
+    Assuming a 19-bit address and a 256-byte Direct Mapped cache with a linesize=2, show how an address is partitioned/interpreted by the cache.
+}{
+    \begin{align*}
+        & \texttt{offset} = 1 \texttt{bit }   \\
+        & 256/2 = 128 =  2^7                  \\
+        & \texttt{entry} = 7 \texttt{bits}    \\
+        & \texttt{tag}  = 11\texttt{ bits}
+    \end{align*}
+}
+
+\problem{
+    f13f0p8
+    f15f0p7
+    f16m2q17
+    w19f0q53
+}{
+    Assuming a 19-bit address and an 80-byte 10-way Set Associative cache with a linesize=4, show how an address is partitioned/interpreted by the cache.
+}{
+    \begin{align*}
+        & \texttt{offset} = 2 \texttt{bits}   \\
+        & 80/(10*4) = 2 = 2^1                 \\
+        & \texttt{  set} = 1 \texttt{bit }    \\
+        & \texttt{tag} = 16 \texttt{bits}
+    \end{align*}
+}
+
+\problem{
+    f13f0p8
+    f15f0p7
+    f16m2q18
+    w19f0q54
+}{
+    Assuming a 19-bit address and a 328-byte Fully Associative cache with a linesize=8, show how an address is partitioned/interpreted by the cache.
+}{
+    \begin{align*}
+        & \texttt{offset} =  3 \texttt{bits} \\
+        & \texttt{tag   } = 16 \texttt{bits}        
+    \end{align*}
+}
+
 \problem{
     f13f0q6
     f15f0p5
@@ -231,4 +223,43 @@
         \bottomrule
         \end{tabular}
     \end{center}
+}
+
+\subsection*{Memory}
+
+
+\problem{
+    f13f0p8
+    f15f0p7
+    f16m2q19
+    w19f0q55
+}{
+    Given a 1 Megabyte physical memory, a 22-bit Virtual address, and a page size of 1K bytes, write down the number of entries in the Page Table, and the width of each entry.
+}{
+    \begin{align*}
+        & 1M = 2^{20}; 1K = 2^{10} \\
+        & (2^{20})/(2^{10}) = 2^{10} \rightarrow \texttt{10-bit wide }
+    \end{align*}
+    PM: $ 10 | 10 $ \\
+    VM: $ 12 | 10 $ \\
+    $2^{12}$ \texttt{entries}        
+}
+
+\problem{
+    f13f0p8
+    f15f0p7
+    f16m2q20
+    w19f0q56
+}{
+    Given a 1 Megabyte physical memory, a 34-bit Virtual address, and a page size of 2K bytes, write down the number of entries in the Page Table, and the width of each entry. Is there a problem with this configuration? 
+    If so, what is the problem?
+}{
+    \begin{align*}
+        & 1M = 2^{20}; 2K = 2^{11} \\
+        & (2^{20})/(2^{11}) = 2^9 \rightarrow \texttt{ 9-bit wide }
+    \end{align*}
+    PM: $  9 | 11 $ \\
+    VM: $ 23 | 11 $ \\
+    $2^{23}$ \texttt{entries}         \\
+    Problem: It is too large to store in 1M physical memory. We can use two page tables. One is base, another one is secondary.
 }

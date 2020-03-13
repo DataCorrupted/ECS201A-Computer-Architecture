@@ -40,14 +40,6 @@
 }
 
 \problem{
-    w15f0p2
-}{
-    The NVIDIA GPU exploits multiple \blank in order to achieve maximum performance
-}{
-    thread SIMD
-}
-
-\problem{
     w15f0p3
     w19f0q21
 }{
@@ -55,4 +47,70 @@
 }{
     Because the message-passing machine and shared memory machine works differently.
     They have different algorithms, and different programming approaches.
+}
+
+\problem{
+    f13f0p3
+    f15f0p3
+    w19f0q23
+}{
+    Which is harder to write a program for, a shared memory machine or a message passing machine?
+    Why?
+}{
+    Shared memory machine.
+    Because you need to write the code for communication.
+}
+
+\problem{
+    f13f0p3
+    f15f0p3
+    w19f0q24
+}{
+    Which is more expensive to build - a shared memory machine, or a message passing machine? 
+    Why?
+}{
+    Shared memory machine
+    Because you don't need hardware to support coherent and consistent.
+}
+
+\problem{
+    w13f0p3
+    w15f0p1
+    w19f0q44
+}{
+    How do two processes communicate when running on a shared memory machine?
+}{
+    Implicitly
+}
+
+\problem{
+    f13f0p5
+    w19f0q41
+}{
+    (Message passing decision, sampled from w19f0q41)
+
+    \nop
+}{
+    \begin{itemize}
+        \item Figure A: Shared memory
+        \item Figure B: Message passing
+    \end{itemize}
+}
+
+
+\problem{
+    w15f0p2
+    w19f0q18
+}{
+    Coherence refers to \blank is returned while consistency has to do with \blank.
+    
+    OR
+
+    Using less than 20 words explain the differences between coherence and consistency.
+
+    OR
+
+    Give a one-word definition of coherence, and a one-word definition of consistency.
+}{
+    What, when
 }

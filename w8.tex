@@ -72,93 +72,9 @@
 }
 
 \problem{
-    f16m2q1
-    w19m2q3
+    w15f0p2
 }{
-    Writes to a cache are inherently slower than reads from a cache - why?
+    The NVIDIA GPU exploits multiple \blank in order to achieve maximum performance
 }{
-    Read can do check tags and read data in parallel. 
-    However, writing is inherently serial/sequential, so we have to check tags before writing the data to the cache. 
-}
-
-\problem{
-    f13f0p8
-    f15f0p7
-    f16m2q16
-    w19f0q52
-}{
-    Assuming a 19-bit address and a 256-byte Direct Mapped cache with a linesize=2, show how an address is partitioned/interpreted by the cache.
-}{
-    \begin{align*}
-        & \texttt{offset} = 1 \texttt{bit }   \\
-        & 256/2 = 128 =  2^7                  \\
-        & \texttt{entry} = 7 \texttt{bits}    \\
-        & \texttt{tag}  = 11\texttt{ bits}
-    \end{align*}
-}
-
-\problem{
-    f13f0p8
-    f15f0p7
-    f16m2q17
-    w19f0q53
-}{
-    Assuming a 19-bit address and an 80-byte 10-way Set Associative cache with a linesize=4, show how an address is partitioned/interpreted by the cache.
-}{
-    \begin{align*}
-        & \texttt{offset} = 2 \texttt{bits}   \\
-        & 80/(10*4) = 2 = 2^1                 \\
-        & \texttt{  set} = 1 \texttt{bit }    \\
-        & \texttt{tag} = 16 \texttt{bits}
-    \end{align*}
-}
-
-\problem{
-    f13f0p8
-    f15f0p7
-    f16m2q18
-    w19f0q54
-}{
-    Assuming a 19-bit address and a 328-byte Fully Associative cache with a linesize=8, show how an address is partitioned/interpreted by the cache.
-}{
-    \begin{align*}
-        & \texttt{offset} =  3 \texttt{bits} \\
-        & \texttt{tag   } = 16 \texttt{bits}        
-    \end{align*}
-}
-
-\problem{
-    f13f0p8
-    f15f0p7
-    f16m2q19
-    w19f0q55
-}{
-    Given a 1 Megabyte physical memory, a 22-bit Virtual address, and a page size of 1K bytes, write down the number of entries in the Page Table, and the width of each entry.
-}{
-    \begin{align*}
-        & 1M = 2^{20}; 1K = 2^{10} \\
-        & (2^{20})/(2^{10}) = 2^{10} \rightarrow \texttt{10-bit wide }
-    \end{align*}
-    PM: $ 10 | 10 $ \\
-    VM: $ 12 | 10 $ \\
-    $2^{12}$ \texttt{entries}        
-}
-
-\problem{
-    f13f0p8
-    f15f0p7
-    f16m2q20
-    w19f0q56
-}{
-    Given a 1 Megabyte physical memory, a 34-bit Virtual address, and a page size of 2K bytes, write down the number of entries in the Page Table, and the width of each entry. Is there a problem with this configuration? 
-    If so, what is the problem?
-}{
-    \begin{align*}
-        & 1M = 2^{20}; 2K = 2^{11} \\
-        & (2^{20})/(2^{11}) = 2^9 \rightarrow \texttt{ 9-bit wide }
-    \end{align*}
-    PM: $  9 | 11 $ \\
-    VM: $ 23 | 11 $ \\
-    $2^{23}$ \texttt{entries}         \\
-    Problem: It is too large to store in 1M physical memory. We can use two page tables. One is base, another one is secondary.
+    thread SIMD
 }
