@@ -1,34 +1,4 @@
-\section*{Week 1 \& 2 (1/6 - 1/19; Chp.1, Quiz 1)}
-
-\problem{
-    w15f0p2
-}{
-    Area on the die used to be the most critical design constraint.
-    That is no longer true, what is the most critical factor now? Why?
-}{
-    \todo
-}
-
-\problem{
-    f13f0p5
-    w15f0p2
-    w19f0q25
-}{
-    What is ``leakage'' current.
-    If Vdd is lowered, what happens to the amount of leakage current?
-}{
-    It is the current leaked when devices are off.
-
-    Increases.
-}
-
-\problem{
-}{
-    In a MOS device, there is a gate, drain, and source.
-    Briefly explain how this device works.
-}{
-    \todo
-}
+\newSection{Week 2 (1/13 - 1/19; Chp.1, Quiz 1)}
 
 \problem{
     w20q1q1
@@ -53,14 +23,6 @@
     List all of them. 
 }{
     \todo
-}
-
-\problem{
-    w20q1q4
-}{
-    Price is a key factor in the design of computers for which class?
-}{
-    \warn{ Embedded system. }
 }
 
 \problem{
@@ -91,15 +53,38 @@
 }
 
 \problem{
-    w20q1q10
-    w20m1q16
+    f13f0p3
+    w15f0p2
+    w19f0q22
+    w20m1q15
 }{
-    Why are there multiple dies per silicon wafer? 
-    Why not just fabricate one huge die per wafer? 
+    Over the years, clock rates grew by a factor of 1000 while power consumed only increased by a factor of 30. 
+    How was this accomplished without melting the chip?
 }{
-    $$ \texttt{Cost of die} = \frac{\texttt{Cost of wafer}}{\texttt{Dies per wafer} \cdot \texttt{Die yield}} $$
+    \warn{
+        $$ \texttt{Power} = \frac{1}{2} \cdot C \cdot V^2 \cdot f$$
+        Lower $V$ allows us to increase $f$ by a square to remain the same power.
+    }
+}
 
-    Making large dies lowers the yield and thus increases the cost.
+\problem{
+    w20m1q1
+}{
+    Which has been increasing faster, latency or bandwidth?
+}{
+    Bandwidth
+}
+
+\problem{
+    w20m1q18
+}{
+    There are two different types of power consumption, static and dynamic. 
+    Which one contributed the most to overall power consumption 20 years ago? 
+    What is the situation now, and why has it changed?
+}{
+    Dynamic 20 years ago, Static nowadays.
+
+    \todo
 }
 
 \problem{
@@ -126,89 +111,4 @@
 }{
     The wire inside is too small, moving a little charge can transmit bits.
     Yet the wire outside is huge, there are too few electrons to transmit information.
-}
-
-
-\problem{
-    f13f0p3
-    w15f0p2
-    w19f0q22
-    w20m1q15
-}{
-    Over the years, clock rates grew by a factor of 1000 while power consumed only increased by a factor of 30. 
-    How was this accomplished without melting the chip?
-}{
-    \warn{
-        $$ \texttt{Power} = \frac{1}{2} \cdot C \cdot V^2 \cdot f$$
-        Lower $V$ allows us to increase $f$ by a square to remain the same power.
-    }
-}
-
-\problem{
-    w20m1q1
-}{
-    Which has been increasing faster, latency or bandwidth?
-}{
-    Bandwidth
-}
-
-\problem{
-    w20m1q2
-}{
-    Is MOS technology current based or charge based.
-}{
-    Charge based.
-}
-
-\problem{
-    w20m1q7
-}{
-    Which is a better metric for comparing processors, energy or power, why?
-}{
-    \todo
-}
-
-\problem{
-    w20m1q9
-}{
-    What is the ``threshold voltage''
-}{
-    \todo
-}
-
-\problem{
-    w20m1q10
-}{
-    Is it possible to design a flawless architecture? Explain your answer.
-}{
-    \todo
-}
-
-\problem{
-    w20m1q11
-}{
-    Why do most current chips feature multiple cores on the same die?
-}{
-    \todo
-}
-
-\problem{
-    w20m1q18
-}{
-    There are two different types of power consumption, static and dynamic. 
-    Which one contributed the most to overall power consumption 20 years ago? 
-    What is the situation now, and why has it changed?
-}{
-    Dynamic 20 years ago, Static nowadays.
-
-    \todo
-}
-
-\problem{
-    w13f0p2
-}{
-    The area of the die used to be the most critical design constraint.
-    That is no longer true, what is the most critical factor now? Why?
-}{
-    \todo
 }

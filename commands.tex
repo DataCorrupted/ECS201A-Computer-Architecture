@@ -21,6 +21,7 @@
 		#1 &    &    &    \\ \hline
 	\fi 
 }
+\newcommand{\ack}[2]{#1 & #2 \\ \hline}
 \newcommand{\problem}[3]{
 % Tests it appeared on
 	\hfill\appr{#1}
@@ -51,3 +52,14 @@
 \newcommand{\OOO}{Out-of-order\xspace}
 
 \newcommand{\blank}{$\rule{2cm}{0.15mm}$}
+
+\newcommand{\newSection}[1]{
+	\section*{#1}
+	\addcontentsline{toc}{section}{#1}
+}
+
+\newcommand{\newSubSection}[1]{
+	\subsection*{#1}
+	\addcontentsline{toc}{subsection}{#1}
+}
+

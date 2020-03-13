@@ -28,6 +28,8 @@ clean :
 %.pdf : %.tex 
 	$(eval basename = $(patsubst %.tex,%,$<))
 	pdflatex $(basename)
+	# Compile twice to get table of content
+	pdflatex $(basename)
 
 open:
 	$(PDF_READER) $(shell pwd)/$(target).pdf &

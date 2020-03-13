@@ -44,28 +44,19 @@
 % Allow block comment
 \usepackage{comment}
 
-% For autoref
+% For autoref and url
 \usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
 
 \title{\name}
 
 \pagestyle{plain}
 \pagenumbering{arabic}
-
-\author{ \\ Computer Science @ UC Davis}
-
-\author{
-  Yuyang(Peter) Rong\\
-  PtrRong@ucdavis.edu
-  \and
-  Chao(Kent) Wu \\
-  ChaWu@ucdavis.edu
-  \and
-  Xiaoyu Zhang \\
-  XybZhang@ucdavis.edu
-}
-
-\date{}
 
 \def\showAns{true}
 
@@ -78,8 +69,11 @@
 
 \maketitle
 
-\input{guide.tex}\newpage
+\tableofcontents \newpage
+  
+\input{preface.tex}\newpage
 
+\input{w1.tex} \newpage
 \input{w2.tex} \newpage
 \input{w3.tex} \newpage
 \input{w4.tex} \newpage
@@ -92,5 +86,7 @@
 
 \input{appx0.tex} \newpage
 \input{appx1.tex} \newpage
+\input{appx2.tex} \newpage
+\input{appx3.tex} 
 
 \end{document}
