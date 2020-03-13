@@ -48,7 +48,7 @@
     Which is more expensive to build - a shared memory machine, or a message passing machine? 
     Why?
 }{
-    \warn{Shared memory machine}.
+    Shared memory machine
     Because you don't need hardware to support coherent and consistent.
 }
 
@@ -101,6 +101,14 @@
     \nop
 }{
     \todo
+}
+
+\problem{
+    \xxxxxx
+}{
+    What is \textit{2:1 cache rule of thumb}?
+}{
+    A directmapped cache of size N has about the same miss rate as a two-way set associative cache of size N/2.
 }
 
 \problem{
@@ -161,7 +169,13 @@
     The designer has the choice of using a physically addressed cache or a virtually addressed cache.
     Explain the difference (drawing a picture is fine!), and give 1 advantage for each.
 }{
-    \todo
+    \warn{
+        The virtually addressed cache is closer to CPU and doesn't need TLB to be addressed.
+        Yet physically addressed cache has to be translated by TLB before it can be indexed.
+
+        VA: Fasten hit time.
+        PA: Don't need to squash cache on context switch.
+    }
 }
 
 \problem{
@@ -178,6 +192,19 @@
                       & = 1 \texttt{ clock} * 1 \texttt{ ns/clock} + 0.10 * 20 \texttt{ clock(s)} * 1 \texttt{ ns/clock}  \\
                       & = 3 \texttt{ ns}
     \end{align*}
+}
+
+\problem{
+    \xxxxxx
+}{
+    Why we don't use LRU? 
+    What are we using instead?
+}{
+    \pg{B-9}
+    
+    As the number of blocks to keep track of increases, LRU becomes increasingly expensive
+    
+    FIFO
 }
 
 \problem{
