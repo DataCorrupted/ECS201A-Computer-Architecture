@@ -1,10 +1,87 @@
 \section*{Week 4 (1/27 - 2/2; Appx.C, Midterm 1)}
 
 \problem{
+    w20m1q5
+}{
+    If a data word is aligned(where a word is 32 bits), what does that mean?
+    (What can be said about the address of the begining of the data item?)
+}{
+    The begining address always ends with 2 zeros.
+}
+
+\problem{
     w19f0q51
+    w20m1q6
 }{
     When we talk about the number of operands in an instruction 
     (a 1-operand or a 2-operand instruction, for example), what do we mean?
+}{
+    \todo
+}
+
+\problem{
+    w19m1q14
+    \xxxxxx
+}{
+    What are the two primary goals of a compiler(in order)?
+}{
+    \begin{itemize}
+        \item Make programs correct when compiled
+        \item Make them fast
+    \end{itemize}
+}
+
+
+\problem{
+    w20m1q19
+}{
+    Machines today use registers - often as many as they can. 
+    Give 2 advantages and 2 disadvantages
+}{
+    \begin{enumerate}
+        \item Pros
+        \begin{itemize}
+            \item Fast
+            \item Deterministic
+        \end{itemize} 
+        \item Cons
+        \begin{item}
+            \item Fixed size
+            \item Hot
+            \item Inter-procedural hardship(Caller saved \& callee saved)
+        \end{item}
+    \end{enumerate}
+}
+
+\problem{
+    w20m1q20
+}{
+    A standard compiler optimization step is to do register allocation. 
+    However, there are times when register allocation is difficult to do while maintaining programam correctness - explain why.
+}{
+    \todo
+}
+
+\problem{
+    w20m1q23
+}{
+    You are responsible for designing a new embedded processor, and you have been told you must use a fixed 18-bit instruction size. To make this work you have decided to use a 2-operand instruc­tion format, 32 registers, and support 256 instructions. Your boss just came in and said things have changed, and you now can only use 12 bits - how would you change your instruction format? 
+    Be sure to explain why you are making the changes (what problem are you solving?) 
+}{
+    \todo
+}
+
+\problem{
+    w20m1q24
+}{
+    Suppose we are considering two alternatives for our conditional branch instructions, as follows:
+    \begin{itemize}
+        \item M1 - A condition code is set by a compare instruction and followed by a branch that tests the condition 
+        \item M2 - A compare is included in the branch. 
+    \end{itemize}
+    On both machines, the conditional branch instruction takes 2 cycles, and all other instructions take 1 cycle. 
+    On Ml, 20\% of all instructions executed are conditional branches. 
+    Because M2 has the com­pare included in the branch, the clock cycle is 1.10 times longer than M1. 
 }{
     \todo
 }
