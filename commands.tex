@@ -14,6 +14,13 @@
 	\fi 
 	\\ \hline
 }
+\newcommand{\cache}[4]{
+	\ifx\showAns\true
+		#1 & #2 & #3 & #4 \\ \hline
+	\else 
+		#1 &    &    &    \\ \hline
+	\fi 
+}
 \newcommand{\problem}[3]{
 % Tests it appeared on
 	\hfill\appr{#1}

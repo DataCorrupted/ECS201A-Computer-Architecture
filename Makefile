@@ -28,6 +28,7 @@ clean :
 %.pdf : %.tex 
 	$(eval basename = $(patsubst %.tex,%,$<))
 	pdflatex $(basename)
+	pdflatex $(basename)
 
 open:
 	$(PDF_READER) $(shell pwd)/$(target).pdf &

@@ -1,0 +1,34 @@
+\section*{Appendix 1: Cache Optimization Effects }
+
+\hfill\appr{    
+    f13f0q6
+    f15f0p5
+    w19f0q38
+}
+\begin{center}
+    \begin{tabular}{  m{0.35\textwidth} C{0.15\textwidth} C{0.15\textwidth} C{0.15\textwidth} }
+    \toprule
+        Techinque                     & Hit time & Miss rate & Miss penalty \\
+    \midrule
+        \cache{Increasing line/block size    }{   }{ - }{ + }
+        \cache{Increasing Associativity      }{ + }{ - }{   }
+        \cache{Decreasing cache size         }{ - }{ + }{   }     
+        \cache{HW/compiler controlled prefetch
+                                             }{   }{ - }{ - } 
+        \cache{Compiler optimizations        }{   }{ - }{   } 
+        \cache{Non-blocking cache            }{   }{   }{ - }  
+        \cache{Virtually addressed cache     }{ - }{   }{   }       
+        \cache{Victim cache(victim cache and regular cache accessed in parallel)
+                                             }{   }{ - }{   }    
+        \cache{Critical word first           }{   }{   }{ - }        
+        \cache{Multilevel cache(first level) }{ - }{ + }{ - }
+        \cache{Give priority to read translation during indexing of a cache
+                                             }{   }{   }{ - }      
+        \cache{Merging write bufer           }{   }{   }{ - }        
+        \cache{Small \& simple first-level cache 
+                                             }{ - }{   }{   }
+        \cache{Way prediction                }{ - }{   }{   }
+    \bottomrule
+    \end{tabular}
+    \label{appx1:tbl}
+\end{center}

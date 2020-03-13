@@ -189,42 +189,6 @@
     \end{align*}
 }
 
-\problem{
-    f13f0q6
-    f15f0p5
-    w19f0q38
-}{
-    For each technique in the following table, indicate how(on average) the 3 terms of AMAT are affected.
-    (Assume there is a single L1 cache.)
-}{
-    \begin{center}
-        \begin{tabular}{  m{0.35\textwidth} C{0.15\textwidth} C{0.15\textwidth} C{0.15\textwidth} }
-        \toprule
-            Techinque                     & Hit time & Miss rate & Miss penalty \\
-        \midrule
-            Increasing line/block size    &   & - & + \\ \hline
-            Increasing Associativity      & + & - &   \\ \hline
-            Decreasing cache size         & - & + &   \\ \hline     
-            HW/compiler controlled prefetch
-                                          &   & - & - \\ \hline 
-            Compiler optimizations        &   & - &   \\ \hline 
-            Non-blocking cache            &   &   & - \\ \hline  
-            Virtually addressed cache     & - &   &   \\ \hline       
-            Victim cache(victim cache and regular cache accessed in parallel)
-                                          &   & - &   \\ \hline    
-            Critical word first           &   &   & - \\ \hline        
-            Multilevel cache(first level) & - & + & - \\ \hline
-            Give priority to read translation during indexing of a cache
-                                          &   &   & - \\ \hline      
-            Merging write bufer           &   &   & - \\ \hline        
-            Small \& simple first-level cache 
-                                          & - &   &   \\ \hline
-            Way prediction                & - &   &   \\ 
-        \bottomrule
-        \end{tabular}
-    \end{center}
-}
-
 \subsection*{Memory}
 
 
