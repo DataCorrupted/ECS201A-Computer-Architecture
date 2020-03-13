@@ -40,6 +40,11 @@
     f16m2q11
     f16f0p1
     w19m2q10
+    w19f0q10
+    w19f0q11
+    w19f0q12
+    w19f0q13
+    w19f0q49
     w20q5q4
     w20m2q12
 }{
@@ -84,6 +89,7 @@
     f16m2q5
     f16f0p4
     w19m2q8
+    w19f0q32
     w20q5q6
     w20m2q14
 }{
@@ -104,6 +110,7 @@
 
 \problem{
     f12m2q15
+    w19f0q9
     w20q5q7
 }{
     Register renaming is used to avoid name hazards. 
@@ -116,10 +123,11 @@
 
 \problem{
     f16m2q13
+    w19f0q48
     w20q5q8
     w20m2q16
 }{
-    (Dependencies recognization \& register substitution, sampled from w20q5q8) \\
+    (Dependencies recognization \& register renaming, sampled from w20q5q8) \\
     \nop
 }{
 
@@ -149,6 +157,7 @@
 }
 
 \problem{
+    w19f0q50
     w20q5q9
     w20m2q17
 }{
@@ -203,6 +212,7 @@
     f15m2q8
     f16m2q8
     w19m2q9
+    w19f0q31
     w20m2q11
 }{
     The book states that slow and wide architectures can be more power-efficient than fast and narrow architectures. 
@@ -213,7 +223,8 @@
     Lowering $V$ and $f$ means the power goes down since $P = C \cdot f \cdot V^2$.
 
     If there is enough data-level parallelism, then slow and wide can provide the same throughput as fast and narrow while using less power. 
-    There is not always enough DLP though.
+    
+    But there is not always enough DLP though and thus slow and wide architectures' throughput is lower than the other's.
 }
 
 \problem{
@@ -224,6 +235,7 @@
     f16m2q12
     f16f0p1
     w19m2q13
+    w19f0q40
     w20m2q15
 }{
     You have been writing C programs for a simple, non-pipelined machine. 
@@ -244,6 +256,7 @@
 
 \problem{
     f14m2q5
+    w19f0q27
 }{
     Speculation is a very useful technique for improving performance. 
     However, it is not being used as extensively as it once was - why not?
@@ -251,7 +264,7 @@
     \warn{
         \pg{201}
         Incorrect speculation does not improve performance; 
-        in fact, it typically harms performance dramatically and lowers energy efficiency.
+        it typically harms performance dramatically and lowers energy efficiency.
     }
 
     OR
@@ -268,9 +281,19 @@
 
 \problem{
     f16m2q14
+    w19f0q46
+    w19f0q47
     w20m2q18
 }{
-    (Dependencies recognization \& NOPS insertion) 
+    (Dependencies \& NOPS insertion) 
 }{
-    refer to the exam
+    \todo
+}
+
+\problem{
+    f19f0q45
+}{
+    (Dependencies \& instruction scheduling) 
+}{
+    \todo
 }
