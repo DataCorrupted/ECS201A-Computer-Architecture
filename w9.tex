@@ -53,7 +53,15 @@
     It lets you calculate if you need to work on improving the memory bandwidth or the float-point hardware.
 }
 
-\subsection*{Cache}
+\problem{
+    w20q6q8
+}{
+    What does TLB do?
+}{
+    \pg{B-46} 
+
+    To keep address translation in a special cache so that a memory access rarely requires a second access to translate the data.
+}
 
 \problem{
     w19f0q3
@@ -64,6 +72,7 @@
 }
 
 \problem{
+    w20q6q1
 }{
     What is \textit{2:1 cache rule of thumb}?
 }{
@@ -74,6 +83,7 @@
     f13f0p3
     f16m2q1
     w19m2q3
+    w20q6q7
 }{
     Writes to a cache are inherently slower than reads from a cache. Why?
 }{
@@ -117,6 +127,7 @@
 
 \problem{
     w19f0q34
+    w20q6q9
 }{
     The designer has the choice of using a physically addressed cache or a virtually addressed cache.
     Explain the difference (drawing a picture is fine!), and give 1 advantage for each.
@@ -131,8 +142,10 @@
 }
 
 \problem{
+    w20q6q2
 }{
-    Why we don't use LRU? 
+    LRU is a popular block replace scheme.
+    However, true LRU is not used when the associativity becomes too high because it is difficuly to build true LRU.
     What are we using instead?
 }{
     \pg{B-9}
@@ -148,6 +161,7 @@
     f15f0p7
     f16m2q16
     w19f0q52
+    w20q6q10
 }{
     Assuming a 19-bit address and a 256-byte Direct Mapped cache with a linesize=2, show how an address is partitioned/interpreted by the cache.
 }{
@@ -164,6 +178,7 @@
     f15f0p7
     f16m2q17
     w19f0q53
+    w20q6q11
 }{
     Assuming a 19-bit address and an 80-byte 10-way Set Associative cache with a linesize=4, show how an address is partitioned/interpreted by the cache.
 }{
@@ -180,6 +195,7 @@
     f15f0p7
     f16m2q18
     w19f0q54
+    w20q6q12
 }{
     Assuming a 19-bit address and a 328-byte Fully Associative cache with a linesize=8, show how an address is partitioned/interpreted by the cache.
 }{
@@ -189,14 +205,12 @@
     \end{align*}
 }
 
-\subsection*{Memory}
-
-
 \problem{
     f13f0p8
     f15f0p7
     f16m2q19
     w19f0q55
+    w20q6q13
 }{
     Given a 1 Megabyte physical memory, a 22-bit Virtual address, and a page size of 1K bytes, write down the number of entries in the Page Table, and the width of each entry.
 }{
@@ -214,6 +228,7 @@
     f15f0p7
     f16m2q20
     w19f0q56
+    w20q6q14
 }{
     Given a 1 Megabyte physical memory, a 34-bit Virtual address, and a page size of 2K bytes, write down the number of entries in the Page Table, and the width of each entry. Is there a problem with this configuration? 
     If so, what is the problem?
