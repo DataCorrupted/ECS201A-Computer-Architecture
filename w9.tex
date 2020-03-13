@@ -94,7 +94,6 @@
 
     Read can do check tags and read data in parallel. 
     However, writing is inherently serial/sequential, so we have to check tags before writing the data to the cache. 
-
 }
 
 \problem{
@@ -132,13 +131,11 @@
     The designer has the choice of using a physically addressed cache or a virtually addressed cache.
     Explain the difference (drawing a picture is fine!), and give 1 advantage for each.
 }{
-    \warn{
-        The virtually addressed cache is closer to CPU and doesn't need TLB to be addressed.
-        Yet physically addressed cache has to be translated by TLB before it can be indexed.
+    The virtually addressed cache is closer to CPU and doesn't need TLB to be addressed.
+    Yet physically addressed cache has to be translated by TLB before it can be indexed.
 
-        VA: Fasten hit time.
-        PA: Don't need to squash cache on context switch.
-    }
+    VA: Fasten \textbf{hit time}(don't need to go extra path to TLB)
+    PA: Don't need to squash cache on \textbf{context switch}.
 }
 
 \problem{
@@ -161,7 +158,9 @@
     There are some hardware structures which do use true LRU.
     What is an example and why would designers do that?
 }{
-    \todo
+    TLB
+
+    Because miss penalty is so huge that I am willing to do other things.
 }
 
 \problem{
@@ -248,5 +247,6 @@
     PM: $  9 | 11 $ \\
     VM: $ 23 | 11 $ \\
     $2^{23}$ \texttt{entries}         \\
-    Problem: It is too large to store in 1M physical memory. We can use two page tables. One is base, another one is secondary.
+    Problem: It is too large to store in 1M physical memory. 
+    We can use two page tables. One is base, another one is secondary.
 }
