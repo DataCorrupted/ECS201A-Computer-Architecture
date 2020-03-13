@@ -30,6 +30,7 @@
     f12m2q12
     w12m2q13
     f13m2q9
+    f13f0p4
     f15m2q4
     f16m2q4
     w19m2q5
@@ -122,6 +123,7 @@
 
 \problem{
     f12m2q13
+    f13f0p4
     f16m2q9
     f16f0p1
     f15f1p1
@@ -154,18 +156,43 @@
     f15f1p6
     f16f0p7
     w19m1q19
+    w19f0q42
     w20q4q9
     w20q4q10
     w20m2q9
 }{
-    If a standard pipeline is modified to support \OOO completion, what new data hazard is introduced?
-    If in addition to completing \OOO, instructions were allowed to issue \OOO, what new data hazard would be introduced.
+    (Pipeline \& hazard, sampled from w19m1q42)
+
+    The MIPS implementation we used in class has a 5-stage pipeline, writes to the register file during the first half of the cycle and reads during the second half, and uses both a branch delay slot and a load delay slot. 
+    If the machine is redesigned to be an 8-stage pipeline, with the following stages:
+
+    $$ F1 \quad F2 \quad D \quad E1 \quad E2 \quad M1 \quad M2 \quad WB$$ 
+
+    \begin{enumerate}
+        \item Assuming this machine has a branch predictor and the branch condition is calculated by the end of the $D$ stage, how big is the branch penalty (measured in cycles) when the prediction is incorrect? 
+        What if the branch condition is not calculated until the end of $E2$?
+    
+        \item How many load delay slots would this machine need (assuming it has forwarding logic and you are forwarding to E2) assuming the memory returns the value by the end of M2? M1?
+    
+        \item What type of data hazard does the above pipeline need to worry about?
+        
+        \item If a standard pipeline is modified to support \OOO completion, what new data hazard is introduced?
+        
+        \item If in addition to completing \OOO, instructions were allowed to issue \OOO, what new data hazard would be introduced.        
+    \end{enumerate}
+
 }{
-    WAW, WAR
+    \begin{enumerate}
+        \item \todo
+        \item \todo
+        \item RAW
+        \item WAW
+        \item WAR
+    \end{enumerate}
 }
 
-
 \problem{
+    f13f0p4
     f14m2q4
     f15m2q5
 }{
