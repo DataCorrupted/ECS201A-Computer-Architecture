@@ -35,6 +35,8 @@
 
 % Allow fixed cell width
 \usepackage{array}
+% Fixed width, centering cell.
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
 
 % Allow \midrule, \toprule and \bottomrule in table.
 \usepackage{booktabs}
