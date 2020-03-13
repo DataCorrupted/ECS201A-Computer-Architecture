@@ -59,7 +59,7 @@
 }{
     How do two processes communicate when running on a shared memory machine?
 }{
-    \todo
+    Implicitly
 }
 
 \problem{
@@ -100,7 +100,10 @@
 
     \nop
 }{
-    \todo
+    \begin{itemize}
+        \item Figure A: Shared memory
+        \item Figure B: Message passing
+    \end{itemize}
 }
 
 \problem{
@@ -108,7 +111,7 @@
 }{
     What is \textit{2:1 cache rule of thumb}?
 }{
-    A directmapped cache of size N has about the same miss rate as a two-way set associative cache of size N/2.
+    A directed mapped cache of size N has about the same miss rate as a two-way set associative cache of size N/2.
 }
 
 \problem{
@@ -129,6 +132,21 @@
     AMAT
 }{
     Average memory access time = Hit time + Miss rate * Miss penalty
+}
+
+\problem{
+    \xxxxxx
+    f15f0p8
+    w19f0q37
+}{
+    Find the Average Memory Access Time (AMAT) for a processor with a 1 ns clock cycle time, a miss penalty of 20 clock cycles, a miss rate of 0.10 misses per instruction, and a cache access time (including hit detection) of 1 clock cycle. 
+    Assume that the read and write miss penalties are the same and ignore other write stalls.
+}{
+    \begin{align*}
+        \texttt{AMAT} & = \texttt{Hit time} + \texttt{Miss rate} * \texttt{Miss penalty} \\
+                      & = 1 \texttt{ clock} * 1 \texttt{ ns/clock} + 0.10 * 20 \texttt{ clock(s)} * 1 \texttt{ ns/clock}  \\
+                      & = 3 \texttt{ ns}
+    \end{align*}
 }
 
 \problem{
@@ -176,22 +194,6 @@
         VA: Fasten hit time.
         PA: Don't need to squash cache on context switch.
     }
-}
-
-\problem{
-    \xxxxxx
-    f15f0p8
-    w19f0q37
-}{
-    Find the Average Memory Access Time (AMAT) for a processor with a 1 ns clock cycle time, a miss
-    penalty of 20 clock cycles, a miss rate of 0.10 misses per instruction, and a cache access time (including hit detection) of 1 clock cycle. 
-    Assume that the read and write miss penalties are the same and ignore other write stalls.
-}{
-    \begin{align*}
-        \texttt{AMAT} & = \texttt{Hit time} + \texttt{Miss rate} * \texttt{Miss penalty} \\
-                      & = 1 \texttt{ clock} * 1 \texttt{ ns/clock} + 0.10 * 20 \texttt{ clock(s)} * 1 \texttt{ ns/clock}  \\
-                      & = 3 \texttt{ ns}
-    \end{align*}
 }
 
 \problem{
