@@ -97,7 +97,7 @@
     Speculation requires a lot of power, and we don't get 8-issue very often because we don't always find that much parallelism, so it is not power efficient.
     I am wasting all of my energy supporting my 8-issue when I only get 3 or 4.
 
-    OR
+    \OR
 
     8-issue machine has more hardware and does more speculation, and thus requires lots of power. 
     If we don't have enough parallelism available, it will have many bubbles and waste energy 
@@ -126,7 +126,8 @@
     w20q5q8
     w20m2q16
 }{
-    (Dependencies recognization \& register renaming, sampled from w20q5q8) \\
+    \info{Dependencies recognization \& register renaming, sampled from w20q5q8}
+
     \nop
 }{
 
@@ -161,7 +162,8 @@
     w20q5q9
     w20m2q17
 }{
-    (Fine / Coarse / Simultaneous multithreading, sampled from w20q5q9) \\
+    \info{Fine / Coarse / Simultaneous multithreading, sampled from w20q5q9}
+
     \nop
 }{
     \begin{minipage}[t]{0.33\textwidth}
@@ -271,7 +273,7 @@
         it typically harms performance dramatically and lowers energy efficiency.
     }
 
-    OR
+    \OR
     
     \warn{
         \pg{210}
@@ -293,7 +295,9 @@
     w19f0q47
     w20m2q18
 }{
-    (Dependencies \& NOPs insertion) 
+    \info{Dependencies \& NOPs insertion}
+
+    \nop
 }{
     \todo
 }
@@ -302,7 +306,9 @@
     f13f0p12
     w19f0q45
 }{
-    (Dependencies \& instruction scheduling) 
+    \info{Dependencies \& instruction scheduling}
+
+    \nop
 }{
     \todo
 }

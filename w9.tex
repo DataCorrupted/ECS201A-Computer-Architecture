@@ -90,7 +90,7 @@
     You can read the tag and simultaneously read the data location, Can discard the data read if the tag didn't match.
     However, you cannot do that on a write, because the write changes the state of the machine - you must first do the tag compare to ensure the write should, in fact change the state.
 
-    OR
+    \OR
 
     Read can do check tags and read data in parallel. 
     However, writing is inherently serial/sequential, so we have to check tags before writing the data to the cache. 

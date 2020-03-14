@@ -73,7 +73,7 @@
 }{
     Hazard through the memory system.
 
-    OR
+    \OR
 
     Hazards through memory system makes it hard to optimize the code by compiler. 
     Finding dependencies through memory is hard. 
@@ -94,7 +94,7 @@
         \item Don't know how to decide how many times to unroll        
     \end{enumerate}
 
-    OR
+    \OR
 
     \begin{enumerate}
         \item Don't know how much to unroll  
@@ -141,7 +141,7 @@
     When an interrupt happens, every instruction before it has finished and none after can complete.
     
     To deal with a page fault. 
-    OR 
+    \OR 
     Virtual Memory support requires that if you have a page fault, I have to go to service the page fault and come back to restart that instruction.
 
 
@@ -161,7 +161,7 @@
     w20q4q10
     w20m2q9
 }{
-    (Pipeline \& hazard, sampled from w19m1q42)
+    \info{Pipeline \& hazard, sampled from w19m1q42}
 
     The MIPS implementation we used in class has a 5-stage pipeline, writes to the register file during the first half of the cycle and reads during the second half, and uses both a branch delay slot and a load delay slot. 
     If the machine is redesigned to be an 8-stage pipeline, with the following stages:
